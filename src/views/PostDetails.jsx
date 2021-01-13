@@ -66,7 +66,10 @@ class PostDetails extends Component {
                       <span>Mars 07,2020</span>
                       <Link to="/">
                         <IconContext.Provider
-                          value={{ className: "post-details-icon-chevron" }}
+                          value={{
+                            className:
+                              "post-details-icon-chevron forward-arrow",
+                          }}
                         >
                           <TiArrowForward />
                         </IconContext.Provider>

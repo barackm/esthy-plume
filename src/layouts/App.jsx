@@ -5,6 +5,7 @@ import AdminLayout from "layouts/Admin";
 import WelcomePage from "views/WelcomePage";
 import MainNavbar from "components/Navbars/MainNavbar";
 import PostDetails from "views/PostDetails";
+import Footer from "views/Footer";
 
 class App extends Component {
   state = {};
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path="/news" render={(props) => <WelcomePage {...props} />} />
           <Redirect from="/" to="/news" />
         </Switch>
+        <Footer />
       </div>
     );
   }

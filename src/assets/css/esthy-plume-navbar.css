@@ -71,3 +71,78 @@
   width: 28px;
   border-radius: 50%;
 }
+.navbar-auth-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.login-btn-wrapper {
+  height: 28px;
+  padding: 0 20px;
+  border-radius: 50px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.541);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.login-btn-wrapper span {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+.profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.authenticated {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #fff;
+  padding-left: 10px;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.authenticated:hover > span {
+  display: block;
+}
+.navbar-auth-area span {
+  margin-right: 10px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.541);
+}
+
+.auth-options {
+  position: absolute;
+  /* display: none; */
+  transition: var(--transition);
+  top: 50px;
+  width: 150px;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.541);
+}
+.auth-options ul {
+  width: 100%;
+  padding-left: 0px !important;
+}
+.auth-options ul li {
+  width: 100%;
+  list-style: none;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.178);
+}
+.auth-options ul li a {
+  text-decoration: none;
+  color: #fff;
+}

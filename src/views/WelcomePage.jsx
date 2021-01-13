@@ -45,6 +45,20 @@ class WelcomePage extends Component {
         timing: "",
         body: "",
       },
+      {
+        id: 6,
+        title: "",
+        author: "",
+        timing: "",
+        body: "",
+      },
+      {
+        id: 7,
+        title: "",
+        author: "",
+        timing: "",
+        body: "",
+      },
     ];
     return (
       <div className="welcome-page-main-container">

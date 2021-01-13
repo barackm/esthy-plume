@@ -424,6 +424,10 @@
   border-bottom: 1px solid var(--light);
   margin-top: 20px;
 }
+.post-details-icon-chevron.forward-arrow {
+  font-size: 25px;
+  margin-left: 20px;
+}
 .post-title-timing-area .details {
   color: var(--secondary-color);
   display: flex;
@@ -803,4 +807,93 @@
   color: var(--secondary-color);
   cursor: pointer;
   font-size: 16px;
+}
+
+/* footer styles  */
+
+.footer-main-container {
+  width: 100%;
+  min-height: 300px;
+  background-color: #424141;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-main-container .header-line {
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-color);
+}
+.footer-main-container .main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footer-main-container .main-container .footer-posts {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: #fff;
+  grid-gap: 20px;
+  padding: 20px 0;
+  padding-top: 30px;
+}
+.footer-category-item {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-category-item {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.089);
+  margin-bottom: 6px;
+  padding: 3px 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.footer-chevron-icon {
+  font-size: 12px;
+  color: var(--light);
+}
+.footer-category-item:hover {
+  transform: scale(1.02);
+}
+.footer-main-container .main-container .left-header {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--light);
+}
+.footer-category-item .category-name {
+  color: var(--light);
+}
+.footer-category-item .posts-size span {
+  background-color: rgba(255, 255, 255, 0.404);
+  padding: 2px 4px;
+  font-size: 12px;
+  border-radius: 2px;
+}
+.popular-post-main-container.footer {
+  color: #fff !important;
+  /* margin-bottom: -40px; */
+}
+.footer-links {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.404);
+}
+.footer-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-links .footer-credentials {
+  color: rgba(255, 255, 255, 0.562);
+  font-size: 14px;
 }
