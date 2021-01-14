@@ -26,7 +26,10 @@ import "assets/scss/paper-dashboard.scss?v=1.2.0";
 import "assets/demo/demo.css";
 import "assets/css/esthy-plume-navbar.css";
 import "assets/css/esthy-plume-main.css";
+import "assets/css/esthy-plume-editor-style.css";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
+
+import "./variables/main";
 
 import App from "layouts/App";
 

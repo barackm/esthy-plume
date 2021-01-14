@@ -18,6 +18,7 @@
 */
 import React from "react";
 
+import * as Yup from "yup";
 // reactstrap components
 import {
   Button,
@@ -26,14 +27,36 @@ import {
   CardBody,
   CardFooter,
   CardTitle,
-  FormGroup,
-  Form,
-  Input,
   Row,
   Col,
 } from "reactstrap";
+import InputForm from "components/form/InputForm";
+import InputField from "components/form/InputField";
+import SubmitBtn from "components/common/SubmitBtn";
 
 class User extends React.Component {
+  validationSchema = Yup.object().shape({
+    startup: Yup.string(),
+    username: Yup.string()
+      .min(3, "Le Nom d'utilisateur doit avoir aumoins 3 characteres")
+      .required("Veuillez entrer le Nom d'utilisatuer")
+      .label("Nom d'utilisatuer"),
+    email: Yup.string()
+      .email("Email doit etre un adress email valide")
+      .required("Veuillez entrer votre adress Email")
+      .label("Email"),
+    entreprise: Yup.string(),
+    name: Yup.string().min(3, "Le Nom doit avoir aumoins 3 characteres"),
+    lastName: Yup.string().min(
+      3,
+      "Le PostNom  doit avoir aumoins 3 characteres"
+    ),
+    address: Yup.string(),
+    city: Yup.string(),
+    country: Yup.string(),
+    postalCode: Yup.number("Le code postal doit etre un nombre"),
+    aboutMe: Yup.string(),
+  });
   render() {
     const { link } = this.props;
     return (
@@ -191,126 +214,97 @@ class User extends React.Component {
             <Col md="8">
               <Card className="card-user">
                 <CardHeader>
-                  <CardTitle tag="h5">Edit Profile</CardTitle>
+                  <CardTitle tag="h5">Editer votre Profile</CardTitle>
                 </CardHeader>
                 <CardBody>
-                  <Form>
+                  <InputForm
+                    initialValues={{
+                      username: "",
+                      name: "",
+                      email: "",
+                      lastName: "",
+                      address: "",
+                      aboutMe: "",
+                      startup: "",
+                      city: "",
+                      country: "",
+                      postalCode: "",
+                    }}
+                    onSubmit={(values) => console.log(values)}
+                    validationSchema={this.validationSchema}
+                  >
                     <Row>
                       <Col className="pr-1" md="5">
-                        <FormGroup>
-                          <label>Company (disabled)</label>
-                          <Input
-                            defaultValue="Creative Code Inc."
-                            disabled
-                            placeholder="Company"
-                            type="text"
-                          />
-                        </FormGroup>
+                        <InputField
+                          name="startup"
+                          label="Entreprise"
+                          type="text"
+                        />
                       </Col>
                       <Col className="px-1" md="3">
-                        <FormGroup>
-                          <label>Username</label>
-                          <Input
-                            defaultValue="michael23"
-                            placeholder="Username"
-                            type="text"
-                          />
-                        </FormGroup>
+                        <InputField
+                          name="username"
+                          label="Nom d'utilisateur"
+                          type="text"
+                        />
                       </Col>
                       <Col className="pl-1" md="4">
-                        <FormGroup>
-                          <label htmlFor="exampleInputEmail1">
-                            Email address
-                          </label>
-                          <Input placeholder="Email" type="email" />
-                        </FormGroup>
+                        <InputField
+                          name="email"
+                          label="Address Email"
+                          type="text"
+                        />
                       </Col>
                     </Row>
                     <Row>
                       <Col className="pr-1" md="6">
-                        <FormGroup>
-                          <label>First Name</label>
-                          <Input
-                            defaultValue="Chet"
-                            placeholder="Company"
-                            type="text"
-                          />
-                        </FormGroup>
+                        <InputField name="name" label="Nom" type="text" />
                       </Col>
                       <Col className="pl-1" md="6">
-                        <FormGroup>
-                          <label>Last Name</label>
-                          <Input
-                            defaultValue="Faker"
-                            placeholder="Last Name"
-                            type="text"
-                          />
-                        </FormGroup>
+                        <InputField
+                          name="lastname"
+                          label="Post Nom"
+                          type="text"
+                        />
                       </Col>
                     </Row>
                     <Row>
                       <Col md="12">
-                        <FormGroup>
-                          <label>Address</label>
-                          <Input
-                            defaultValue="Melbourne, Australia"
-                            placeholder="Home Address"
-                            type="text"
-                          />
-                        </FormGroup>
+                        <InputField
+                          name="address"
+                          label="Address"
+                          type="text"
+                        />
                       </Col>
                     </Row>
                     <Row>
                       <Col className="pr-1" md="4">
-                        <FormGroup>
-                          <label>City</label>
-                          <Input
-                            defaultValue="Melbourne"
-                            placeholder="City"
-                            type="text"
-                          />
-                        </FormGroup>
+                        <InputField name="city" label="Ville" type="text" />
                       </Col>
                       <Col className="px-1" md="4">
-                        <FormGroup>
-                          <label>Country</label>
-                          <Input
-                            defaultValue="Australia"
-                            placeholder="Country"
-                            type="text"
-                          />
-                        </FormGroup>
+                        <InputField name="country" label="Pays" type="text" />
                       </Col>
                       <Col className="pl-1" md="4">
-                        <FormGroup>
-                          <label>Postal Code</label>
-                          <Input placeholder="ZIP Code" type="number" />
-                        </FormGroup>
+                        <InputField
+                          name="postalCode"
+                          label="Code Postal"
+                          type="number"
+                        />
                       </Col>
                     </Row>
                     <Row>
                       <Col md="12">
-                        <FormGroup>
-                          <label>About Me</label>
-                          <Input
-                            type="textarea"
-                            defaultValue="Oh so, your weak rhyme You doubt I'll bother, reading into it"
-                          />
-                        </FormGroup>
+                        <InputField
+                          name="aboutMe"
+                          label="Apropos de Moi"
+                          type="textarea"
+                        />
                       </Col>
                     </Row>
                     <Row>
-                      <div className="update ml-auto mr-auto">
-                        <Button
-                          className="btn-round"
-                          color="primary"
-                          type="submit"
-                        >
-                          Update Profile
-                        </Button>
-                      </div>
+                      <SubmitBtn label="Metre a jour" />
                     </Row>
-                  </Form>
+                  </InputForm>
                 </CardBody>
               </Card>
             </Col>

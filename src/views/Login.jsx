@@ -1,21 +1,23 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  FormGroup,
-  Form,
-  Input,
-  Row,
-  Col,
-  Label,
-} from "reactstrap";
+import * as Yup from "yup";
+import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
+import InputForm from "components/form/InputForm";
+import InputField from "components/form/InputField";
+import SubmitBtn from "components/common/SubmitBtn";
 
 class Login extends Component {
   state = {};
+  validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .email("Email doit etre un adress email valide")
+      .required("Veuillez entrer votre adress Email")
+      .label("Email"),
+    password: Yup.string()
+      .min(4, "Le mot de pass ne doit pas etre court")
+      .required("Veuillez entrer votre mot de pass")
+      .label("Mot de pass"),
+  });
   render() {
     return (
       <div className="login-page-main-container">
@@ -26,32 +28,24 @@ class Login extends Component {
             </CardTitle>
           </CardHeader>
           <CardBody>
-            <Form>
+            <InputForm
+              onSubmit={(values) => console.log(values)}
+              validationSchema={this.validationSchema}
+              initialValues={{ email: "", password: "" }}
+            >
               <Row>
                 <Col className="pr-1 form-items" md="12">
-                  <FormGroup>
-                    <label>Nom d'utilisateur ou address Email</label>
-                    <Input defaultValue="" placeholder="" type="text" />
-                  </FormGroup>
-                  <FormGroup>
-                    <label>Mot de pass</label>
-                    <Input defaultValue="" placeholder="" type="password" />
-                  </FormGroup>
+                  <InputField name="email" label="Email" type="text" />
+                  <InputField
+                    name="password"
+                    label="Mot de pass"
+                    type="password"
+                  />
                 </Col>
               </Row>
+
               <Row>
-                <FormGroup check>
-                  <Label check>
-                    <Input type="checkbox" id="checkbox2" /> Rester connecte
-                  </Label>
-                </FormGroup>
-              </Row>
-              <Row>
-                <div className="update ml-auto mr-auto">
-                  <Button className="btn-round" color="primary" type="submit">
-                    Se connecter
-                  </Button>
-                </div>
+                <SubmitBtn label="Se connecter" />
               </Row>
               <Row>
                 <div className="update ml-auto mr-auto login-links">
@@ -59,7 +53,7 @@ class Login extends Component {
                   <Link to="/signup">Vous n'avez pas de compte ?</Link>
                 </div>
               </Row>
-            </Form>
+            </InputForm>
           </CardBody>
         </Card>
       </div>

@@ -9,7 +9,7 @@ import Footer from "views/Footer";
 import User from "views/User";
 import Login from "views/Login";
 import Signup from "views/Signup";
-import NewPost from "views/NewPost";
+import EditPost from "views/EditPost";
 import Contact from "views/Contact";
 // import { AiTwotoneCalculator } from "react-icons/ai";
 
@@ -21,7 +21,7 @@ class App extends Component {
         <MainNavbar />
         <Switch>
           <Route
-            path="/admin/dashboard"
+            path="/admin/"
             render={(props) => <AdminLayout {...props} />}
           />
           <Route
@@ -36,10 +36,13 @@ class App extends Component {
           <Route path="/login" render={(props) => <Login {...props} />} />
           <Route path="/signup" render={(props) => <Signup {...props} />} />
           <Route
-            path="/article/:id"
-            render={(props) => <NewPost {...props} />}
+            path="/edit-article/:id"
+            render={(props) => <EditPost {...props} />}
           />
-          <Route path="/article" render={(props) => <NewPost {...props} />} />
+          <Route
+            path="/edit-article"
+            render={(props) => <EditPost {...props} />}
+          />
           <Route path="/contact" render={(props) => <Contact {...props} />} />
           <Redirect from="/" to="/news" />
           <Redirect to="/" />

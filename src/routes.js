@@ -24,6 +24,9 @@ import TableList from "views/Tables";
 import Maps from "views/Map";
 import UserPage from "views/User";
 import UpgradeToPro from "views/Upgrade";
+import Users from "views/Users";
+import Admins from "views/Admins";
+import Discussions from "views/Discussions";
 
 var routes = [
   {
@@ -33,20 +36,7 @@ var routes = [
     component: Dashboard,
     layout: "/admin",
   },
-  {
-    path: "/icons",
-    name: "Icons",
-    icon: "nc-icon nc-diamond",
-    component: Icons,
-    layout: "/admin",
-  },
-  {
-    path: "/maps",
-    name: "Maps",
-    icon: "nc-icon nc-pin-3",
-    component: Maps,
-    layout: "/admin",
-  },
+
   {
     path: "/notifications",
     name: "Notifications",
@@ -54,34 +44,48 @@ var routes = [
     component: Notifications,
     layout: "/admin",
   },
+  // {
+  //   path: "/icons",
+  //   name: "Icons",
+  //   icon: "nc-icon nc-tile-56",
+  //   component: Icons,
+  //   layout: "/admin",
+  // },
   {
-    path: "/user-page",
-    name: "User Profile",
+    path: "/users",
+    name: "Users",
     icon: "nc-icon nc-single-02",
-    component: UserPage,
+    component: Users,
     layout: "/admin",
   },
   {
-    path: "/tables",
-    name: "Table List",
-    icon: "nc-icon nc-tile-56",
+    path: "/articles",
+    name: "Articles",
+    icon: "nc-icon nc-paper",
     component: TableList,
     layout: "/admin",
   },
   {
-    path: "/typography",
-    name: "Typography",
-    icon: "nc-icon nc-caps-small",
-    component: Typography,
+    path: "/admins",
+    name: "Administrateurs",
+    icon: "nc-icon nc-settings",
+    component: Admins,
     layout: "/admin",
   },
   {
-    pro: true,
-    path: "/upgrade",
-    name: "Upgrade to PRO",
-    icon: "nc-icon nc-spaceship",
-    component: UpgradeToPro,
+    path: "/discussion",
+    name: "Discussion",
+    icon: "nc-icon nc-chat-33",
+    component: Discussions,
     layout: "/admin",
   },
+  // {
+  //   pro: true,
+  //   path: "/",
+  //   name: "Logout",
+  //   icon: "nc-icon nc-spaceship",
+  //   component: UpgradeToPro,
+  //   layout: "/login",
+  // },
 ];
 export default routes;

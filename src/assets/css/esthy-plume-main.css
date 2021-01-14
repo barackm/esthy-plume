@@ -4,6 +4,12 @@
   --light: #ebebeb;
   --secondary-light: #e8474796;
   --transition: all 0.3s ease;
+  --space: 2rem;
+  --space-xs: calc(var(--space) / 3);
+  --space-sm: calc(var(--space) / 2);
+  --space-md: calc(var(--space) * 2);
+
+  --radius: 0.125rem;
 }
 .app-main-container {
   margin-top: 60px;
@@ -111,6 +117,18 @@
 /* right sidebar styles  */
 .right-sidebar-main-container {
   width: 100%;
+  --offset: var(--space);
+  flex-grow: 1;
+  flex-basis: 300px;
+  align-self: start;
+  position: sticky;
+  /* top: var(--offset); */
+}
+.right-sidebar-main-container.scrolling {
+  position: absolute;
+}
+.component {
+  max-height: calc(100vh - var(--offset) * 2);
 }
 .categories-area .header {
   width: 100%;
@@ -985,4 +1003,9 @@ a {
 .contact-main-area {
   width: 60%;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* sidebar admin styles  */
+.active-pro {
+  bottom: 70px !important;
 }
