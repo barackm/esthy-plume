@@ -46,7 +46,7 @@ class Footer extends Component {
       },
     ];
     return (
-      <div className="footer-main-container">
+      <div className="footer-main-container" id="footer">
         <div className="header-line"></div>
         <div className="main-container">
           <div className="footer-posts">

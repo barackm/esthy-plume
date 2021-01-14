@@ -37,6 +37,8 @@ class Sidebar extends React.Component {
     return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
   }
   componentDidMount() {
+    const footer = document.getElementById("footer");
+    footer.classList.add("admin");
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(this.sidebar.current, {
         suppressScrollX: true,
@@ -48,11 +50,13 @@ class Sidebar extends React.Component {
     if (navigator.platform.indexOf("Win") > -1) {
       ps.destroy();
     }
+    const footer = document.getElementById("footer");
+    footer.classList.remove("admin");
   }
   render() {
     return (
       <div
-        className="sidebar"
+        className="sidebar sidebar-main-area"
         data-color={this.props.bgColor}
         data-active-color={this.props.activeColor}
       >

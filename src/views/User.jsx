@@ -35,9 +35,10 @@ import {
 
 class User extends React.Component {
   render() {
+    const { link } = this.props;
     return (
-      <>
-        <div className="content">
+      <div className={link && "profile-main-area"}>
+        <div className="content profile-main-container">
           <Row>
             <Col md="4">
               <Card className="card-user">
@@ -315,7 +316,7 @@ class User extends React.Component {
             </Col>
           </Row>
         </div>
-      </>
+      </div>
     );
   }
 }

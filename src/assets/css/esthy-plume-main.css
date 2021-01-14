@@ -872,11 +872,15 @@
   color: var(--light);
 }
 .footer-category-item .posts-size span {
-  background-color: rgba(255, 255, 255, 0.404);
+  background-color: var(--secondary-light);
   padding: 2px 4px;
   font-size: 12px;
   border-radius: 2px;
 }
+.footer-main-container.admin {
+  display: none;
+}
+
 .popular-post-main-container.footer {
   color: #fff !important;
   /* margin-bottom: -40px; */
@@ -896,4 +900,89 @@
 .footer-links .footer-credentials {
   color: rgba(255, 255, 255, 0.562);
   font-size: 14px;
+}
+
+/* profile styles  */
+
+.profile-main-area {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 100px;
+}
+.profile-main-area .profile-main-container {
+  width: 75%;
+}
+.sidebar-main-area {
+  top: 60px;
+}
+
+/* login page styles  */
+
+.login-page-main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 600px;
+  align-items: center;
+}
+.login-page-main-container .login-main-area {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  width: 400px;
+}
+.form-items {
+  padding-right: 15px !important;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+}
+.btn-primary:hover {
+  background-color: #00a6e3a6 !important;
+}
+a {
+  color: var(--primary-color);
+}
+.login-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin: 20px 0;
+}
+.login-title {
+  text-transform: uppercase;
+}
+.login-header {
+  display: flex;
+  justify-content: center;
+  color: var(--primary-color);
+}
+
+/* new post styles  */
+
+.new-post-page-main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+}
+.new-post-main-area {
+  width: 75%;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* contact page styles  */
+
+.contact-page-main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  min-height: 600px;
+}
+.contact-main-area {
+  width: 60%;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }

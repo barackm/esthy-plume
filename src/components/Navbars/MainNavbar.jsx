@@ -51,10 +51,10 @@ class MainNavbar extends Component {
           </div>
         </div>
         <div className="navbar-auth-area">
-          <div className="login-btn-wrapper">
+          {/* <div className="login-btn-wrapper">
             <span>Se connecter</span>
-          </div>
-          {/* <div
+          </div> */}
+          <div
             className="authenticated"
             onClick={this.handleToggleProfileOptions}
           >
@@ -62,12 +62,15 @@ class MainNavbar extends Component {
             <div className="profile-image">
               <img src={mike} alt="" srcset="" />
             </div>
-          </div> */}
+          </div>
           {profileOptionsOpen && (
             <div className="auth-options">
               <ul>
                 <li>
-                  <Link to="/" onClick={this.handleToggleProfileOptions}>
+                  <Link
+                    to="/profile/1"
+                    onClick={this.handleToggleProfileOptions}
+                  >
                     <IconContext.Provider
                       value={{ className: "navbar-icon-user" }}
                     >
@@ -77,7 +80,10 @@ class MainNavbar extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" onClick={this.handleToggleProfileOptions}>
+                  <Link
+                    to="/admin/dashboard"
+                    onClick={this.handleToggleProfileOptions}
+                  >
                     <IconContext.Provider
                       value={{ className: "navbar-icon-user" }}
                     >
