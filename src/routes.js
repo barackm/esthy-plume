@@ -18,15 +18,10 @@
 */
 import Dashboard from "views/Dashboard";
 import Notifications from "views/Notifications";
-import Icons from "views/Icons";
-import Typography from "views/Typography";
-import TableList from "views/Tables";
-import Maps from "views/Map";
-import UserPage from "views/User";
-import UpgradeToPro from "views/Upgrade";
 import Users from "views/Users";
 import Admins from "views/Admins";
 import Discussions from "views/Discussions";
+import Articles from "views/Articles";
 
 var routes = [
   {
@@ -53,7 +48,7 @@ var routes = [
   // },
   {
     path: "/users",
-    name: "Users",
+    name: "Utilisateurs",
     icon: "nc-icon nc-single-02",
     component: Users,
     layout: "/admin",
@@ -62,7 +57,7 @@ var routes = [
     path: "/articles",
     name: "Articles",
     icon: "nc-icon nc-paper",
-    component: TableList,
+    component: Articles,
     layout: "/admin",
   },
   {

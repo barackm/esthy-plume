@@ -10,7 +10,7 @@ class Signup extends Component {
   validationSchema = Yup.object().shape({
     username: Yup.string()
       .min(3, "Le Nom d'utilisateur doit avoir aumoins 3 characteres")
-      .required("Veuillez entrer le Nom d'utilisatuer")
+      .required("Veuillez entrer le Nom d'utilisateur")
       .label("Nom d'utilisatuer"),
     email: Yup.string()
       .email("Email doit etre un adress email valide")

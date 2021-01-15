@@ -1,18 +1,26 @@
+import SubmitBtn from "components/common/SubmitBtn";
+import InputForm from "components/form/InputForm";
+import * as Yup from "yup";
 import React, { Component } from "react";
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  FormGroup,
-  Form,
-  Input,
-  Row,
-  Col,
-} from "reactstrap";
+import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
+import InputField from "components/form/InputField";
 class Contact extends Component {
   state = {};
+  validationSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(3, "Le Nom d'utilisateur doit avoir aumoins 3 characteres!")
+      .required("Veuillez entrer le Nom d'utilisateur!")
+      .label("Nom"),
+    lastName: Yup.string()
+      .min(3, "Le Post Nom doit avoir aumoins 3 characteres!")
+      .required()
+      .label("PostNom"),
+    email: Yup.string().email("Email doit etre un adress email valide!"),
+    message: Yup.string()
+      .min(3, "Le message doit avoir aumoins 3 characteres")
+      .required("Veuillez entrer votre message!"),
+  });
+
   render() {
     return (
       <div className="contact-page-main-container">
@@ -23,52 +31,65 @@ class Contact extends Component {
             </CardTitle>
           </CardHeader>
           <CardBody>
-            <Form>
+            <InputForm
+              initialValues={{
+                name: "",
+                lastName: "",
+                email: "",
+                address: "",
+                message: "",
+              }}
+              validationSchema={this.validationSchema}
+            >
               <Row>
                 <Col className="pr-1" md="6">
-                  <FormGroup>
-                    <label>Nom</label>
-                    <Input placeholder="ex: John" type="text" />
-                  </FormGroup>
+                  <InputField
+                    name="name"
+                    type="text"
+                    label="Nom"
+                    placeholder="Ex: John"
+                  />
                 </Col>
                 <Col className="pl-1" md="6">
-                  <FormGroup>
-                    <label>Post Nom</label>
-                    <Input placeholder="ex: Doe" type="text" />
-                  </FormGroup>
+                  <InputField
+                    name="lastName"
+                    type="text"
+                    label="Post Nom"
+                    placeholder="Ex: Doe"
+                  />
                 </Col>
               </Row>
               <Row>
                 <Col md="12">
-                  <FormGroup>
-                    <label>Email</label>
-                    <Input placeholder="ex: me@gmail.com" type="email" />
-                  </FormGroup>
-                  <FormGroup>
-                    <label>Address</label>
-                    <Input placeholder="ex: Goma Katindo" type="text" />
-                  </FormGroup>
+                  <InputField
+                    name="email"
+                    type="text"
+                    label="Email"
+                    placeholder="Ex: johndoe@gmail.com"
+                  />
+
+                  <InputField
+                    name="address"
+                    type="text"
+                    label="Address"
+                    placeholder="Ex: Goma katindo RDC "
+                  />
                 </Col>
               </Row>
               <Row>
                 <Col md="12">
-                  <FormGroup>
-                    <label>Message</label>
-                    <Input
-                      type="textarea"
-                      placeholder="Votre message par ici"
-                    />
-                  </FormGroup>
+                  <InputField
+                    name="message"
+                    type="textarea"
+                    label="Message"
+                    placeholder="Votre message par ici"
+                  />
                 </Col>
               </Row>
               <Row>
-                <div className="update ml-auto mr-auto">
-                  <Button className="btn-round" color="primary" type="submit">
-                    Envoyer
-                  </Button>
-                </div>
+                <SubmitBtn label="Envoyer" />
               </Row>
-            </Form>
+            </InputForm>
           </CardBody>
         </Card>
       </div>

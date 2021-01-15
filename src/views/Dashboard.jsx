@@ -16,6 +16,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+import Header from "components/Navbars/DemoNavbar";
 import React from "react";
 // react plugin used to create charts
 import { Line, Pie } from "react-chartjs-2";
@@ -40,6 +41,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <>
+        <Header {...this.props} onSearch={() => {}} />
         <div className="content">
           <Row>
             <Col lg="3" md="6" sm="6">

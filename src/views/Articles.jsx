@@ -1,83 +1,133 @@
 import React, { Component } from "react";
+import _ from "lodash";
+import paginate from "components/pagination/paginate";
+import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
+import Pagination from "components/pagination/Pagination";
+import ArticlesTable from "components/table/ArticlesTable";
+import Header from "components/Navbars/DemoNavbar";
+import convertNumber from "variables/convertNumber";
 
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  Table,
-  Row,
-  Col,
-} from "reactstrap";
+const articles = [
+  {
+    id: 1,
+    title: "barack",
+    body: "",
+    authorId: 1,
+    createdAt: "Mars 22, 2021",
+  },
+  {
+    id: 2,
+    title: "lorem lorem",
+    body: "",
+    authorId: 2,
+    createdAt: "Mars 22, 2021",
+  },
+  {
+    id: 3,
+    title: "lorem lorem",
+    body: "",
+    authorId: 1,
+    createdAt: "Mars 22, 2021",
+  },
+  {
+    id: 4,
+    title: "lorem lorem",
+    body: "",
+    authorId: 1,
+    createdAt: "Mars 22, 2021",
+  },
+  {
+    id: 5,
+    title: "lorem lorem",
+    body: "",
+    authorId: 2,
+    createdAt: "Mars 22, 2021",
+  },
+  {
+    id: 6,
+    title: "lorem lorem",
+    body: "",
+    authorId: 2,
+    createdAt: "Mars 22, 2021",
+  },
+  {
+    id: 7,
+    title: "lorem lorem",
+    body: "",
+    authorId: 1,
+    createdAt: "Mars 22, 2021",
+  },
+];
 class Articles extends Component {
-  state = {};
+  state = {
+    pageCount: 6,
+    currentPage: 1,
+    sortColumn: { path: "title", order: "asc" },
+    articles: [],
+    searchQuery: "",
+  };
+  componentDidMount() {
+    this.setState({ articles });
+  }
+  handlePageChange = (page) => {
+    this.setState({ currentPage: page });
+  };
+  handleSort = (sortColumn) => {
+    this.setState({ sortColumn });
+  };
+  getSearchedData = () => {
+    const { articles: allArticles, searchQuery } = this.state;
+    return allArticles.filter((article) => article.title.includes(searchQuery));
+  };
+  getSortedData = () => {
+    const { sortColumn } = this.state;
+    return _.orderBy(
+      this.getSearchedData(),
+      [sortColumn.path],
+      [sortColumn.order]
+    );
+  };
+  getPagedData = () => {
+    const { currentPage, pageCount } = this.state;
+    return paginate(this.getSortedData(), currentPage, pageCount);
+  };
+
+  handleSearch = (e) => {
+    console.log(e.target.value);
+    this.setState({ searchQuery: e.target.value });
+  };
   render() {
+    const { pageCount, currentPage, sortColumn } = this.state;
+    const pagedData = this.getPagedData();
+    const articlesNumber = 60000;
     return (
       <>
+        <Header {...this.props} onSearch={this.handleSearch} />
         <div className="content">
           <Row>
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <CardTitle tag="h4">Les Utilisateurs</CardTitle>
+                  <CardTitle tag="h4">
+                    Vos Articles {convertNumber(articlesNumber)}
+                  </CardTitle>
                 </CardHeader>
                 <CardBody>
-                  <Table responsive>
-                    <thead className="text-primary">
-                      <tr>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th className="text-right">Salary</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td className="text-right">$36,738</td>
-                      </tr>
-                      <tr>
-                        <td>Minerva Hooper</td>
-                        <td>Curaçao</td>
-                        <td>Sinaai-Waas</td>
-                        <td className="text-right">$23,789</td>
-                      </tr>
-                      <tr>
-                        <td>Sage Rodriguez</td>
-                        <td>Netherlands</td>
-                        <td>Baileux</td>
-                        <td className="text-right">$56,142</td>
-                      </tr>
-                      <tr>
-                        <td>Philip Chaney</td>
-                        <td>Korea, South</td>
-                        <td>Overland Park</td>
-                        <td className="text-right">$38,735</td>
-                      </tr>
-                      <tr>
-                        <td>Doris Greene</td>
-                        <td>Malawi</td>
-                        <td>Feldkirchen in Kärnten</td>
-                        <td className="text-right">$63,542</td>
-                      </tr>
-                      <tr>
-                        <td>Mason Porter</td>
-                        <td>Chile</td>
-                        <td>Gloucester</td>
-                        <td className="text-right">$78,615</td>
-                      </tr>
-                      <tr>
-                        <td>Jon Porter</td>
-                        <td>Portugal</td>
-                        <td>Gloucester</td>
-                        <td className="text-right">$98,615</td>
-                      </tr>
-                    </tbody>
-                  </Table>
+                  <ArticlesTable
+                    sortColumn={sortColumn}
+                    articles={pagedData}
+                    onSort={this.handleSort}
+                  />
                 </CardBody>
               </Card>
+            </Col>
+            <Col>
+              <Pagination
+                pageCount={pageCount}
+                pageItems={this.getSearchedData()}
+                onPageChange={this.handlePageChange}
+                currentPage={currentPage}
+              />
             </Col>
           </Row>
         </div>

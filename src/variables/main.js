@@ -5,7 +5,7 @@ window.onload = () => {
 };
 
 const rightSidebarSticky = () => {
-  const rightSidebar = document.querySelector(".right-sidebar-main-container");
+  // const rightSidebar = document.querySelector(".right-sidebar-main-container");
 
   const scrollHight = window.scrollY;
   if (scrollHight >= 400) {

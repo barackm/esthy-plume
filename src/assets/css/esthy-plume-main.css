@@ -1009,3 +1009,14 @@ a {
 .active-pro {
   bottom: 70px !important;
 }
+
+.error-message {
+}
+/* pagination styles  */
+.page-link {
+  transition: var(--transition);
+}
+.page-link.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}

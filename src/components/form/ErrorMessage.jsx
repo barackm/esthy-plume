@@ -4,7 +4,9 @@ export default function ErrorMessage({ message, visible }) {
   if (!visible) return null;
   return (
     <div>
-      <label className="text-danger">{message}</label>
+      <label style={{ lineHeight: 1.2 }} className="text-danger error-message">
+        {message}
+      </label>
     </div>
   );
 }

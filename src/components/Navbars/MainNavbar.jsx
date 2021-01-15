@@ -19,19 +19,19 @@ class MainNavbar extends Component {
     const { profileOptionsOpen } = this.state;
     return (
       <div className="main-navbar-container">
-        <div className="logo-container">
-          <h4>LOGO</h4>
-        </div>
+        <Link to="/" className="logo-container">
+          <h4>ESTHY PLUME</h4>
+        </Link>
         <div className="links">
           <ul>
             <li>
-              <a href="#1">News</a>
+              <Link to="/">News</Link>
             </li>
             <li>
-              <a href="#2">Apropos</a>
+              <Link to="/about">Apropos</Link>
             </li>
             <li>
-              <a href="#3">Contact</a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -93,7 +93,7 @@ class MainNavbar extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" onClick={this.handleToggleProfileOptions}>
+                  <Link to="/login" onClick={this.handleToggleProfileOptions}>
                     {" "}
                     <IconContext.Provider
                       value={{ className: "navbar-icon-user" }}

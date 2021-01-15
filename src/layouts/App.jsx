@@ -11,6 +11,7 @@ import Login from "views/Login";
 import Signup from "views/Signup";
 import EditPost from "views/EditPost";
 import Contact from "views/Contact";
+import AboutPage from "views/AboutPage";
 // import { AiTwotoneCalculator } from "react-icons/ai";
 
 class App extends Component {
@@ -32,9 +33,6 @@ class App extends Component {
             path="/profile/:id"
             render={(props) => <User {...props} link={true} />}
           />
-          <Route path="/news" render={(props) => <WelcomePage {...props} />} />
-          <Route path="/login" render={(props) => <Login {...props} />} />
-          <Route path="/signup" render={(props) => <Signup {...props} />} />
           <Route
             path="/edit-article/:id"
             render={(props) => <EditPost {...props} />}
@@ -43,6 +41,10 @@ class App extends Component {
             path="/edit-article"
             render={(props) => <EditPost {...props} />}
           />
+          <Route path="/news" render={(props) => <WelcomePage {...props} />} />
+          <Route path="/login" render={(props) => <Login {...props} />} />
+          <Route path="/signup" render={(props) => <Signup {...props} />} />
+          <Route path="/about" render={(props) => <AboutPage {...props} />} />
           <Route path="/contact" render={(props) => <Contact {...props} />} />
           <Redirect from="/" to="/news" />
           <Redirect to="/" />
