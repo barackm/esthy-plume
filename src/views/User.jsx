@@ -58,9 +58,8 @@ class User extends React.Component {
     aboutMe: Yup.string(),
   });
   render() {
-    const { link } = this.props;
     return (
-      <div className={link && "profile-main-area"}>
+      <div className="profile-main-area">
         <div className="content profile-main-container">
           <Row>
             <Col md="4">

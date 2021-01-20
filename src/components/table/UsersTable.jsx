@@ -36,7 +36,7 @@ class UsersTable extends Component {
       content: (user) => {
         return (
           <Button className="btn-round" color="danger">
-            Effacer
+            Supprimer
           </Button>
         );
       },

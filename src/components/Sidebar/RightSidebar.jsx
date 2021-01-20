@@ -12,46 +12,14 @@ import {
 class RightSidebar extends Component {
   state = {};
   render() {
-    const categories = [
-      {
-        id: "1",
-        name: "Culture",
-      },
-      {
-        id: "2",
-        name: "Politique",
-      },
-      {
-        id: "3",
-        name: "Agriculture",
-      },
-      {
-        id: "4",
-        name: "Enseignement",
-      },
-      {
-        id: "5",
-        name: "Culture",
-      },
-      {
-        id: "6",
-        name: "Culture",
-      },
-      {
-        id: "7",
-        name: "Culture",
-      },
-      {
-        id: "8",
-        name: "Innovation",
-      },
-    ];
+    const { categories, onChangeCategory, selectedCategory } = this.props;
     const popularPosts = [
       { id: 1, title: "", createdAt: "" },
       { id: 2, title: "", createdAt: "" },
       { id: 3, title: "", createdAt: "" },
       { id: 4, title: "", createdAt: "" },
     ];
+
     return (
       <div className="right-sidebar-main-container">
         <div className="component">
@@ -59,7 +27,15 @@ class RightSidebar extends Component {
             <div className="header">Categories</div>
             <div className="categories-container">
               {categories.map((category) => (
-                <div className="category-item">
+                <div
+                  key={category.id}
+                  className={
+                    selectedCategory && selectedCategory.id === category.id
+                      ? "category-item active"
+                      : "category-item"
+                  }
+                  onClick={() => onChangeCategory(category)}
+                >
                   <div className="icon-wrapper-category">
                     <IconContext.Provider
                       value={{ className: "category-sidebar-icon" }}
@@ -74,10 +50,9 @@ class RightSidebar extends Component {
           </div>
           <div className="popular-posts-area">
             <div className="header">Publications populaires</div>
-
             <div className="popular-post-container">
               {popularPosts.map((post) => (
-                <PopularPost />
+                <PopularPost key={post.id} />
               ))}
             </div>
           </div>

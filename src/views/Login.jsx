@@ -10,8 +10,8 @@ class Login extends Component {
   state = {};
   validationSchema = Yup.object().shape({
     email: Yup.string()
-      .email("Email doit etre un adress email valide")
-      .required("Veuillez entrer votre adress Email")
+      // .email("Email doit etre un adress email valide")
+      .required("Veuillez entrer votre adress Email ou Nom d'utilisateur")
       .label("Email"),
     password: Yup.string()
       .min(4, "Le mot de pass ne doit pas etre court")
@@ -35,7 +35,11 @@ class Login extends Component {
             >
               <Row>
                 <Col className="pr-1 form-items" md="12">
-                  <InputField name="email" label="Email" type="text" />
+                  <InputField
+                    name="email"
+                    label="Email ou Nom d'utilisateur"
+                    type="text"
+                  />
                   <InputField
                     name="password"
                     label="Mot de pass"

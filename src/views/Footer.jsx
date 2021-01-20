@@ -8,8 +8,8 @@ class Footer extends Component {
   render() {
     const posts = [
       { id: 1, title: "" },
-      { id: 1, title: "" },
-      { id: 1, title: "" },
+      { id: 2, title: "" },
+      { id: 3, title: "" },
     ];
     const categories = [
       {
@@ -56,7 +56,7 @@ class Footer extends Component {
               </div>
               <div className="posts-container">
                 {posts.map((post) => (
-                  <PopularPost page="footer" />
+                  <PopularPost page="footer" key={post.id} />
                 ))}
               </div>
             </div>
@@ -64,7 +64,7 @@ class Footer extends Component {
               <div className="left-header">Categories</div>
               <div className="categories-wrapper">
                 {categories.map((category) => (
-                  <div className="footer-category-item">
+                  <div className="footer-category-item" key={category.id}>
                     <div className="category-name">
                       <IconContext.Provider
                         value={{ className: "footer-chevron-icon" }}
@@ -84,7 +84,7 @@ class Footer extends Component {
               <div className="left-header">Recentes en Culture</div>
               <div className="posts-container">
                 {posts.map((post) => (
-                  <PopularPost page="footer" />
+                  <PopularPost page="footer" key={post.id} />
                 ))}
               </div>
             </div>

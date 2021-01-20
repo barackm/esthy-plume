@@ -10,7 +10,7 @@ class Comment extends Component {
       <div className="comment-main-container">
         <div className="author-profile">
           <div className="image-wrapper">
-            <img src={profile} alt="" srcset="" />
+            <img src={profile} alt="" />
           </div>
         </div>
         <div className="comment-details">

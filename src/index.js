@@ -33,12 +33,16 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 import "./variables/main";
 
 import App from "layouts/App";
+import configureStore from "store/configureStore";
+import { Provider } from "react-redux";
 
 const hist = createBrowserHistory();
-
+const store = configureStore();
 ReactDOM.render(
-  <Router history={hist}>
-    <App />
-  </Router>,
+  <Provider store={store}>
+    <Router history={hist}>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );

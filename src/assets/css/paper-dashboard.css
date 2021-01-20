@@ -6541,7 +6541,7 @@ License - nucleoapp.com/license/
 
 .fixed-plugin .dropdown .dropdown-menu:after {
   right: -16px;
-  top: 28%;
+  top: 50%;
 }
 
 .fixed-plugin .gh-btn,

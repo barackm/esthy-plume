@@ -3,7 +3,14 @@ import ErrorMessage from "./ErrorMessage";
 import { FormGroup, Input } from "reactstrap";
 import { useFormikContext } from "formik";
 
-export default function InputField({ name, label, type, placeholder, rest }) {
+export default function InputField({
+  name,
+  label,
+  type,
+  placeholder,
+  className,
+  rest,
+}) {
   const { handleChange, errors, setFieldTouched, touched } = useFormikContext();
   return (
     <div>
@@ -15,6 +22,7 @@ export default function InputField({ name, label, type, placeholder, rest }) {
           onChange={handleChange(name)}
           type={type}
           placeholder={placeholder}
+          className={className}
         />
       </FormGroup>
       <ErrorMessage message={errors[name]} visible={touched[name]} />

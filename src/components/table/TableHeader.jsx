@@ -7,18 +7,20 @@ class TableHeader extends Component {
   renderSortIcon = (column) => {
     if (column.content) return null;
     const { sortColumn } = this.props;
-    if (sortColumn.path === "asc") {
-      return (
-        <IconContext.Provider value={{}}>
-          <FaSortUp />
-        </IconContext.Provider>
-      );
-    } else {
-      return (
-        <IconContext.Provider value={{}}>
-          <FaSortDown />
-        </IconContext.Provider>
-      );
+    if (sortColumn.path === column.path) {
+      if (sortColumn.order === "asc") {
+        return (
+          <IconContext.Provider value={{}}>
+            <FaSortUp />
+          </IconContext.Provider>
+        );
+      } else {
+        return (
+          <IconContext.Provider value={{}}>
+            <FaSortDown />
+          </IconContext.Provider>
+        );
+      }
     }
   };
   raseSort = (path) => {

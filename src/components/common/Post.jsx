@@ -18,7 +18,7 @@ class Post extends Component {
             <div className="over-lay"></div>
             <span className="article-category">Culture</span>
             <div className="image">
-              <img src={img} alt="" srcset="" />
+              <img src={img} alt="" />
             </div>
           </div>
         </div>

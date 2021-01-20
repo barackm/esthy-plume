@@ -14,7 +14,7 @@ class PopularPost extends Component {
       <Link to="/news/1" className="popular-post-main-container">
         <div className="image-wrapper">
           <div className="img">
-            <img src={img1} alt="" srcset="" />
+            <img src={img1} alt="" />
           </div>
         </div>
         <div className="article-details">

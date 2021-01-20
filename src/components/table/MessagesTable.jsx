@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AppTable from "components/table/Table";
 import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 class MessagesTable extends Component {
   state = {};
@@ -10,25 +11,15 @@ class MessagesTable extends Component {
       label: "Nom",
     },
     {
-      path: "lastname",
+      path: "lastName",
       label: "PostNom",
     },
-    {
-      path: "email",
-      label: "Email",
-    },
-    {
-      path: "address",
-      label: "Address",
-    },
+
     {
       path: "createdAt",
       label: "Date",
     },
-    {
-      path: "message",
-      label: "Message",
-    },
+
     {
       path: "delete",
       label: "Supprimer",
@@ -40,7 +31,23 @@ class MessagesTable extends Component {
         );
       },
     },
+    {
+      path: "visiter",
+      label: "Voir details",
+      content: (message) => {
+        return (
+          <Link
+            to={`/message/${message.id}`}
+            className="btn btn-primary"
+            color="danger"
+          >
+            Voir Details
+          </Link>
+        );
+      },
+    },
   ];
+
   render() {
     const columns = this.columns;
     const { messages, onSort, sortColumn } = this.props;

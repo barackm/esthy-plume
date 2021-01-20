@@ -12,7 +12,7 @@ class PostLiked extends Component {
         <div className="header">
           <div className="image-wrapper">
             <div className="overlay"></div>
-            <img src={image} alt="" srcset="" />
+            <img src={image} alt="" />
           </div>
         </div>
         <div className="category">

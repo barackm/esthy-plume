@@ -140,7 +140,7 @@ class Discussions extends Component {
               <Card>
                 <CardHeader>
                   <CardTitle tag="h4">
-                    Les Utilisateurs {convertNumber(messsagesNumber)}
+                    Vos Messages recus {convertNumber(messsagesNumber)}
                   </CardTitle>
                 </CardHeader>
                 <CardBody>

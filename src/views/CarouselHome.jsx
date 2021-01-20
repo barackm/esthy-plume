@@ -19,12 +19,12 @@ const items = [
     caption: "Slide 1",
   },
   {
-    src: image1,
+    src: require("assets/img/damir-bosnjak.jpg"),
     altText: "Slide 2",
     caption: "Slide 2",
   },
   {
-    src: image1,
+    src: require("assets/img/bg5.jpg"),
     altText: "Slide 3",
     caption: "Slide 3",
   },
@@ -61,7 +61,7 @@ const CarouselHome = (props) => {
         <Link to="/news/1">
           <div className="main-article-home-area">
             <div className="image-wrapper">
-              <img src={item.src} alt="" srcset="" />
+              <img src={item.src} alt="" />
             </div>
             <div className="home-article-details">
               <div className="home-article-category">
