@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AppTable from "components/table/Table";
+import AppTable from "../../components/table/Table";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 

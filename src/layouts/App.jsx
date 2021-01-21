@@ -2,19 +2,19 @@ import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
-import AdminLayout from "layouts/Admin";
-import WelcomePage from "views/WelcomePage";
-import MainNavbar from "components/Navbars/MainNavbar";
-import PostDetails from "views/PostDetails";
-import Footer from "views/Footer";
-import User from "views/User";
-import Login from "views/Login";
-import Signup from "views/Signup";
-import EditPost from "views/EditPost";
-import Contact from "views/Contact";
-import AboutPage from "views/AboutPage";
-import MessageDetails from "views/MessageDetails";
-import Loading from "components/animation/Loading.jsx";
+import AdminLayout from "../layouts/Admin";
+import WelcomePage from "../views/WelcomePage";
+import MainNavbar from "../components/Navbars/MainNavbar";
+import PostDetails from "../views/PostDetails";
+import Footer from "../views/Footer";
+import User from "../views/User";
+import Login from "../views/Login";
+import Signup from "../views/Signup";
+import EditPost from "../views/EditPost";
+import Contact from "../views/Contact";
+import AboutPage from "../views/AboutPage";
+import MessageDetails from "../views/MessageDetails";
+import Loading from "../components/animation/Loading.jsx";
 
 class App extends Component {
   state = {

@@ -17,10 +17,10 @@
 
 */
 /*eslint-disable*/
-import Header from "components/Navbars/DemoNavbar";
 import React from "react";
 // react plugin for creating notifications over the dashboard
 import NotificationAlert from "react-notification-alert";
+import Header from "../components/Navbars/DemoNavbar";
 // reactstrap components
 import {
   UncontrolledAlert,

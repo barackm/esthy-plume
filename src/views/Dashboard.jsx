@@ -16,7 +16,6 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Header from "components/Navbars/DemoNavbar";
 import React from "react";
 // react plugin used to create charts
 import { Line, Pie } from "react-chartjs-2";
@@ -31,11 +30,13 @@ import {
   Col,
 } from "reactstrap";
 // core components
+import Header from "../components/Navbars/DemoNavbar";
+
 import {
   dashboard24HoursPerformanceChart,
   dashboardEmailStatisticsChart,
   dashboardNASDAQChart,
-} from "variables/charts.js";
+} from "../variables/charts.js";
 
 class Dashboard extends React.Component {
   render() {

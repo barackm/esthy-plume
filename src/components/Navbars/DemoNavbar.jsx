@@ -30,7 +30,7 @@ import {
   Input,
 } from "reactstrap";
 
-import routes from "routes.js";
+import routes from "../../routes.js";
 
 class Header extends React.Component {
   constructor(props) {

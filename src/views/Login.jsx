@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
-import InputForm from "components/form/InputForm";
-import InputField from "components/form/InputField";
-import SubmitBtn from "components/common/SubmitBtn";
+import InputForm from "../components/form/InputForm";
+import InputField from "../components/form/InputField";
+import SubmitBtn from "../components/common/SubmitBtn";
 
 class Login extends Component {
   state = {};

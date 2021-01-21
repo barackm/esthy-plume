@@ -1,4 +1,3 @@
-import RightSidebar from "components/Sidebar/RightSidebar";
 import React, { Component } from "react";
 import { IconContext } from "react-icons";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -10,13 +9,14 @@ import { TiArrowForward } from "react-icons/ti";
 import { connect } from "react-redux";
 import * as Yup from "yup";
 
-import image from "assets/img/1.jpg";
-import mark from "assets/img/mike.jpg";
-import PostLiked from "components/common/PostLiked";
-import Comment from "components/common/Comment";
-import InputForm from "components/form/InputForm";
-import InputField from "components/form/InputField";
-import SubmitBtn from "components/common/SubmitBtn";
+import RightSidebar from "../components/Sidebar/RightSidebar";
+import image from "../assets/img/1.jpg";
+import mark from "../assets/img/mike.jpg";
+import PostLiked from "../components/common/PostLiked";
+import Comment from "../components/common/Comment";
+import InputForm from "../components/form/InputForm";
+import InputField from "../components/form/InputField";
+import SubmitBtn from "../components/common/SubmitBtn";
 import { addComment, loadComments } from "../store/comments";
 
 class PostDetails extends Component {

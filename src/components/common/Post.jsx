@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 import { RiTimeLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import truncatedStr from "utils/truncatedStr";
+import truncatedStr from "../../utils/truncatedStr";
 
 import img from "../../assets/img/9.jpg";
 

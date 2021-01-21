@@ -1,7 +1,7 @@
-import PopularPost from "components/common/PopularPost";
 import React, { Component } from "react";
 import { IconContext } from "react-icons";
 import { FaChevronRight } from "react-icons/fa";
+import PopularPost from "../components/common/PopularPost";
 
 class Footer extends Component {
   state = {};

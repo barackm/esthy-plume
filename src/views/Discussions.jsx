@@ -1,11 +1,13 @@
-import Header from "components/Navbars/DemoNavbar";
-import paginate from "components/pagination/paginate";
-import Pagination from "components/pagination/Pagination";
-import MessagesTable from "components/table/MessagesTable";
-import _ from "lodash";
+
 import React, { Component } from "react";
+
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
-import convertNumber from "variables/convertNumber";
+import _ from "lodash";
+import convertNumber from "../variables/convertNumber";
+import Header from "../components/Navbars/DemoNavbar";
+import paginate from "../components/pagination/paginate";
+import Pagination from "../components/pagination/Pagination";
+import MessagesTable from "../components/table/MessagesTable";
 
 const messages = [
   {

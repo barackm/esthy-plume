@@ -30,9 +30,9 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import InputForm from "components/form/InputForm";
-import InputField from "components/form/InputField";
-import SubmitBtn from "components/common/SubmitBtn";
+import InputForm from "../components/form/InputForm";
+import InputField from "../components/form/InputField";
+import SubmitBtn from "../components/common/SubmitBtn";
 
 class User extends React.Component {
   validationSchema = Yup.object().shape({

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import _ from "lodash";
-import paginate from "components/pagination/paginate";
+import paginate from "../components/pagination/paginate";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
-import Pagination from "components/pagination/Pagination";
-import ArticlesTable from "components/table/ArticlesTable";
-import Header from "components/Navbars/DemoNavbar";
-import convertNumber from "variables/convertNumber";
+import Pagination from "../components/pagination/Pagination";
+import ArticlesTable from "../components/table/ArticlesTable";
+import Header from "../components/Navbars/DemoNavbar";
+import convertNumber from "../variables/convertNumber";
 
 const articles = [
   {

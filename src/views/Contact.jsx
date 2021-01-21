@@ -1,9 +1,11 @@
-import SubmitBtn from "components/common/SubmitBtn";
-import InputForm from "components/form/InputForm";
-import * as Yup from "yup";
 import React, { Component } from "react";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
-import InputField from "components/form/InputField";
+import * as Yup from "yup";
+
+import InputField from "../components/form/InputField";
+import SubmitBtn from "../components/common/SubmitBtn";
+import InputForm from "../components/form/InputForm";
+
 class Contact extends Component {
   state = {};
   validationSchema = Yup.object().shape({

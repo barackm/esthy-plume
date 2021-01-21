@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineDashboard } from "react-icons/ai";
 import { RiMenu3Line } from "react-icons/ri";
 
-import mike from "assets/img/mike.jpg";
+import mike from "../../assets/img/mike.jpg";
 
 class MainNavbar extends Component {
   state = {

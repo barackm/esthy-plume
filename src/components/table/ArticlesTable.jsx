@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
-import AppTable from "components/table/Table";
 import Button from "reactstrap/lib/Button";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
 import { FaLink } from "react-icons/fa";
+
+import AppTable from "../../components/table/Table";
+
 const admins = [
   { id: 1, name: "Freddy", lastName: "Mukelenga" },
   { id: 2, name: "Alexender", lastName: "Dommy" },

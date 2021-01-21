@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { IconContext } from "react-icons";
 import { BsClock } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import truncatedStr from "utils/truncatedStr";
+import truncatedStr from "../../utils/truncatedStr";
 
 import img1 from "../../assets/img/bg5.jpg";
 

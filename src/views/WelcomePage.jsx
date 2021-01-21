@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
 
 import CarouselHome from "./CarouselHome";
-import Post from "components/common/Post";
-import RightSidebar from "components/Sidebar/RightSidebar";
-import SearchNavbar from "components/Navbars/SearchNavbar";
+import Post from "../components/common/Post";
+import RightSidebar from "../components/Sidebar/RightSidebar";
+import SearchNavbar from "../components/Navbars/SearchNavbar";
 
 class WelcomePage extends Component {
   state = {};

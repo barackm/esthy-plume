@@ -1,12 +1,12 @@
-import paginate from "components/pagination/paginate";
-import Pagination from "components/pagination/Pagination";
 import React, { Component } from "react";
 
 import _ from "lodash";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 import UsersTable from "../components/table/UsersTable";
-import Header from "components/Navbars/DemoNavbar";
-import convertNumber from "variables/convertNumber";
+import Header from "../components/Navbars/DemoNavbar";
+import convertNumber from "../variables/convertNumber";
+import paginate from "../components/pagination/paginate";
+import Pagination from "../components/pagination/Pagination";
 
 const users = [
   {

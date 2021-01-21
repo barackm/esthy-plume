@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import truncatedStr from "utils/truncatedStr";
+import truncatedStr from "../../utils/truncatedStr";
 
 class SearchNavbar extends Component {
   state = {};
