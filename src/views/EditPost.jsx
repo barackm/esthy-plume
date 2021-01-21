@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TextEditor from "../components/text-editor/TextEditor";
-import { EditorState, convertFromHTML } from "draft-js";
+import { EditorState } from "draft-js";
 import { stateToHTML } from "draft-js-export-html";
 import ReactHtmlParser from "react-html-parser";
 import { AiFillCamera } from "react-icons/ai";
@@ -47,7 +47,7 @@ class EditPost extends Component {
   };
   handleDeleteImage = (_image) => {
     const _images = [...this.state.images];
-    const images = _images.filter((image) => image != _image);
+    const images = _images.filter((image) => image !== _image);
     this.setState({ images });
   };
   render() {

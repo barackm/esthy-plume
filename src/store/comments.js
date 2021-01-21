@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import * as actions from "./api";
-import moment from "moment";
+// import moment from "moment";
 const slice = createSlice({
   initialState: {
     list: [],

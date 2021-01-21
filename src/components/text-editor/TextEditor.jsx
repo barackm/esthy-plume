@@ -13,7 +13,6 @@ import { BsTypeBold } from "react-icons/bs";
 import { GrMonospace } from "react-icons/gr";
 import "draft-js/dist/Draft.css";
 
-let lastId = 0;
 class TextEditor extends React.Component {
   constructor(props) {
     super(props);
