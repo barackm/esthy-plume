@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
-import { Router } from "react-router-dom";
+// import { createBrowserHistory } from "history";
+import { BrowserRouter } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./assets/scss/paper-dashboard.scss?v=1.2.0";
@@ -19,13 +19,13 @@ import App from "./layouts/App";
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 
-const hist = createBrowserHistory();
+// const hist = createBrowserHistory();
 const store = configureStore();
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hist}>
+    <BrowserRouter>
       <App />
-    </Router>
+    </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 );
