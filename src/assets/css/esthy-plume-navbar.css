@@ -13,7 +13,6 @@
   z-index: 9999;
   width: 100vw;
   transition: height 0.5s ease-in;
-  overflow-x: hidden !important;
 }
 a {
   text-decoration: none;
