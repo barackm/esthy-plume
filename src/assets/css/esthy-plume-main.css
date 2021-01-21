@@ -14,6 +14,7 @@
 .app-main-container {
   margin-top: 60px;
   width: 100%;
+  overflow-x: hidden !important;
 }
 .welcome-page-main-container {
   width: 100%;
