@@ -6,6 +6,7 @@ import Pagination from "../components/pagination/Pagination";
 import ArticlesTable from "../components/table/ArticlesTable";
 import Header from "../components/Navbars/DemoNavbar";
 import convertNumber from "../variables/convertNumber";
+import { Link } from "react-router-dom";
 
 const articles = [
   {
@@ -107,10 +108,15 @@ class Articles extends Component {
           <Row>
             <Col md="12">
               <Card>
-                <CardHeader>
+                <CardHeader
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
                   <CardTitle tag="h4">
                     Vos Articles {convertNumber(articlesNumber)}
                   </CardTitle>
+                  <Link to="/edit-article" className="btn btn-primary">
+                    Rediger un article
+                  </Link>
                 </CardHeader>
                 <CardBody>
                   <ArticlesTable
