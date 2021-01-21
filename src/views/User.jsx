@@ -73,10 +73,24 @@ class User extends React.Component {
                 <CardBody>
                   <div className="author">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <input
+                        type="file"
+                        name="profile"
+                        id=""
+                        accept="image/*"
+                        onChange={() => {}}
+                        className="profile-image-selector"
+                      />
                       <img
                         alt="..."
                         className="avatar border-gray"
                         src={require("assets/img/mike.jpg")}
+                      />
+                      <input
+                        type="file"
+                        name="profile"
+                        id=""
+                        className="profile-image-selector"
                       />
                       <h5 className="title">Chet Faker</h5>
                     </a>

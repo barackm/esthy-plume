@@ -17,10 +17,13 @@ import Comment from "components/common/Comment";
 import InputForm from "components/form/InputForm";
 import InputField from "components/form/InputField";
 import SubmitBtn from "components/common/SubmitBtn";
-import { addComment } from "../store/comments";
+import { addComment, loadComments } from "../store/comments";
 
 class PostDetails extends Component {
   state = {};
+  componentDidMount() {
+    this.props.loadComments();
+  }
   validationSchema = Yup.object().shape({
     comment: Yup.string()
       .min(3, "Le commentaire ne doit pas avoir moins de 3 characteres")
@@ -257,9 +260,10 @@ class PostDetails extends Component {
     );
   }
 }
-const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    addComment,
+    addComment: (comment) => dispatch(addComment(comment)),
+    loadComments: () => dispatch(loadComments()),
   };
 };
 export default connect(null, mapDispatchToProps)(PostDetails);

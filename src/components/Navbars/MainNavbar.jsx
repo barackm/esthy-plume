@@ -49,11 +49,7 @@ class MainNavbar extends Component {
       >
         <div className="header-controls">
           <Link to="/" className="logo-container">
-            <img
-              src={require("../../assets/img/logo-esthy.png")}
-              alt=""
-              srcset=""
-            />
+            <img src={require("../../assets/img/logo-esthy.png")} alt="" />
           </Link>
           <div className="hamberger-container" onClick={onOpenNavbar}>
             <IconContext.Provider value={{ className: "hamberger" }}>

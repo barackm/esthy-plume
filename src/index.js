@@ -29,6 +29,7 @@ import "assets/css/esthy-plume-main.css";
 import "assets/css/esthy-plume-editor-style.css";
 import "assets/css/esthy-plume-about-style.css";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
+import "assets/css/esthy-plume-text-editor-style.css";
 
 import "./variables/main";
 
