@@ -880,6 +880,9 @@
   display: flex;
   justify-content: space-between;
 }
+.footer-chevron-icon {
+  margin-right: 10px;
+}
 .footer-category-item {
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.089);
