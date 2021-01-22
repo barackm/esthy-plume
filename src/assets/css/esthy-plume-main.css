@@ -1195,18 +1195,18 @@ a {
 
 @media (max-width: 1100px) {
   .welcome-area {
-    width: 95%;
+    width: 90%;
     margin: 0 !important;
   }
   .welcome-area .row {
     padding: 0 !important;
   }
   .post-details-main-area {
-    width: 95%;
+    width: 90%;
     margin: 0 !important;
   }
   .post-details-main-area.container {
-    width: 95%;
+    width: 90%;
     margin: 0 !important;
   }
 }
