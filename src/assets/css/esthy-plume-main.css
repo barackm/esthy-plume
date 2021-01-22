@@ -1193,6 +1193,15 @@ a {
     width: 85%;
     margin: 0 !important;
   }
+  .social-media-area .links-container {
+    padding-left: 0 !important;
+  }
+  .content.profile-main-container {
+    width: 85%;
+  }
+  .card-user.contact-main-area {
+    width: 85%;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -1214,6 +1223,25 @@ a {
   .new-post-main-area {
     width: 93%;
   }
+  .social-media-area .links-container {
+    padding-left: 0 !important;
+  }
+  .content.profile-main-container {
+    width: 93%;
+  }
+  .content.profile-main-container .card-body {
+    /* padding: 15px !important; */
+  }
+  .pr-1,
+  .px-1 {
+    padding-right: 0 !important;
+  }
+  .contact-page-main-container {
+    padding-top: 30px;
+  }
+  .card-user.contact-main-area {
+    width: 93%;
+  }
 }
 @media (max-width: 992px) {
 }
@@ -1222,7 +1250,7 @@ a {
     padding-top: 20px;
   }
   .main-article-home-area {
-    height: 320px;
+    height: 300px;
   }
   .home-article-title h3 {
     font-size: 20px !important;
@@ -1273,6 +1301,9 @@ a {
   .main-right-side-area {
     width: 93%;
   }
+  .social-media-area .links-container {
+    padding-left: 0 !important;
+  }
 }
 
 @media (max-width: 590px) {
@@ -1306,4 +1337,18 @@ a {
     margin: 20px 0;
     padding-right: 0px;
   }
+  .social-media-area .links-container {
+    padding-left: 0 !important;
+  }
+}
+
+.pl-1,
+.px-1 {
+  padding: 0 15px !important;
+  padding-right: 0 !important;
+}
+.pl-1,
+.px-1 .form-group {
+  /* padding-right: 15px !important; */
+  width: 100%;
 }
