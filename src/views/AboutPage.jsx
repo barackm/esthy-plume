@@ -23,7 +23,7 @@ class AboutPage extends Component {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 24 150 28"
               preserveAspectRatio="none"
-              shape-rendering="auto"
+              shapeRendering="auto"
             >
               <defs>
                 <path
@@ -33,27 +33,24 @@ class AboutPage extends Component {
               </defs>
               <g className="parallax">
                 <use
-                  xlink
                   href="#gentle-wave"
                   x="48"
                   y="0"
                   fill="rgba(255,255,255,0.7"
                 />
                 <use
-                  xlink
                   href="#gentle-wave"
                   x="48"
                   y="3"
                   fill="rgba(255,255,255,0.5)"
                 />
                 <use
-                  xlink
                   href="#gentle-wave"
                   x="48"
                   y="5"
                   fill="rgba(255,255,255,0.3)"
                 />
-                <use xlink href="#gentle-wave" x="48" y="7" fill="#fff" />
+                <use href="#gentle-wave" x="48" y="7" fill="#fff" />
               </g>
             </svg>
           </div>
