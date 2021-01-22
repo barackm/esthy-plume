@@ -109,12 +109,19 @@ class Articles extends Component {
             <Col md="12">
               <Card>
                 <CardHeader
-                  style={{ display: "flex", justifyContent: "space-between" }}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
                 >
                   <CardTitle tag="h4">
                     Vos Articles {convertNumber(articlesNumber)}
                   </CardTitle>
-                  <Link to="/edit-article" className="btn btn-primary">
+                  <Link
+                    to="/edit-article"
+                    className="btn btn-primary add-article-btn"
+                  >
                     Rediger un article
                   </Link>
                 </CardHeader>

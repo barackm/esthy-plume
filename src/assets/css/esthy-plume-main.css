@@ -1534,3 +1534,29 @@ a {
     padding-top: 30px;
   }
 }
+
+/* media queries for the tables  */
+
+@media (max-width: 768px) {
+  .table-responsive .table .text-primary tr th {
+    font-size: 12px !important;
+  }
+  .table-responsive .table tbody tr td button {
+    border-width: 0px;
+    border-radius: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 10px !important;
+  }
+  .add-article-btn {
+    font-size: 10px !important;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-title {
+    font-size: 16px;
+  }
+}
