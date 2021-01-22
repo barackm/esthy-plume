@@ -79,12 +79,10 @@ const CarouselHome = (props) => {
                 <span>Mars 17, 2020</span>
               </div>
               <div className="home-article-synthese">
-                <p>
-                  {truncatedStr(
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.Id fuga consequatur quod enim voluptatem aliquid itaque,vitae similique, minima laboriosam, obcaecati molestiasmaiores quam adipisci?",
-                    120
-                  )}
-                </p>
+                {truncatedStr(
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit.Id fuga consequatur quod enim voluptatem aliquid itaque,vitae similique, minima laboriosam, obcaecati molestiasmaiores quam adipisci?",
+                  120
+                )}
               </div>
             </div>
             <div className="overlay-article-main"></div>
