@@ -13,3 +13,9 @@
 .ck-content {
   height: 100%;
 } */
+
+@media (max-width: 768px) {
+  .editor-main-area {
+    padding: 0 10px !important;
+  }
+}

@@ -1209,6 +1209,9 @@ a {
     width: 93%;
     margin: 0 !important;
   }
+  .new-post-main-area {
+    width: 93%;
+  }
 }
 @media (max-width: 992px) {
 }
@@ -1225,6 +1228,16 @@ a {
   .home-article-synthese {
     font-size: 12px;
     margin-bottom: 30px;
+  }
+  .images-input-area {
+  }
+  .selected-image {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  .file-input-container {
+    width: 70px !important;
+    height: 70px !important;
   }
 }
 
