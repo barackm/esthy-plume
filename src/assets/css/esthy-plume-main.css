@@ -195,6 +195,7 @@
 }
 .social-media-area {
   margin-top: 80px;
+  width: 100%;
 }
 .social-media-area .header {
   width: 100%;
@@ -214,10 +215,11 @@
 }
 .social-media-area .links-container {
   display: grid;
-  width: 100%;
+  width: 100% !important;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   margin-top: 20px;
+  padding-left: 0 !important;
 }
 .social-media-area .links-container .single-link {
   display: flex;
@@ -1220,7 +1222,7 @@ a {
     padding-top: 20px;
   }
   .main-article-home-area {
-    height: 250px;
+    height: 320px;
   }
   .home-article-title h3 {
     font-size: 20px !important;
@@ -1238,6 +1240,38 @@ a {
   .file-input-container {
     width: 70px !important;
     height: 70px !important;
+  }
+  .welcome-area .row {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    margin: 0 !important;
+  }
+  .main-article-feed-area {
+    padding-top: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .news-area {
+    width: 93%;
+    margin-top: 0px;
+  }
+  .welcome-page-main-container {
+    padding-top: 0;
+  }
+  .main-right-side-area {
+    width: 93%;
   }
 }
 
