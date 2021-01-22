@@ -19,7 +19,7 @@ class AboutPage extends Component {
           </div>
           <div>
             <svg
-              class="waves"
+              className="waves"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 24 150 28"
               preserveAspectRatio="none"
@@ -31,7 +31,7 @@ class AboutPage extends Component {
                   d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
                 />
               </defs>
-              <g class="parallax">
+              <g className="parallax">
                 <use
                   xlink
                   href="#gentle-wave"
@@ -81,7 +81,7 @@ class AboutPage extends Component {
           </div>
           <div className="our-mission-area">
             <Row className="mission-row">
-              <Col md="6">
+              <Col md="6" sm="12">
                 <div className="header">
                   <h3>Notre mission</h3>
                 </div>
@@ -101,7 +101,7 @@ class AboutPage extends Component {
                   développement sein de la communauté.
                 </div>
               </Col>
-              <Col md="6">
+              <Col md="6" sm="12">
                 <div className="about-image-container">
                   <div className="image-wrapper ">
                     <img
@@ -293,7 +293,7 @@ class AboutPage extends Component {
                 </div>
               </Col>
             </Row>
-            <Row className="mission-row strategy">
+            <Row className="mission-row strategy valeurs">
               <Col md="12">
                 <div className="header">
                   <h3>Nos valeurs</h3>

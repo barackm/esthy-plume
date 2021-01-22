@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
+import { IconContext } from "react-icons";
+import { FaGooglePlusG } from "react-icons/fa";
 import InputForm from "../components/form/InputForm";
 import InputField from "../components/form/InputField";
 import SubmitBtn from "../components/common/SubmitBtn";
@@ -29,6 +31,14 @@ class Signup extends Component {
             <CardTitle tag="h4" className="login-title">
               Creer un compte
             </CardTitle>
+            <div className="login-with-google">
+              <IconContext.Provider
+                value={{ className: "login-with-google-icon" }}
+              >
+                <FaGooglePlusG />
+              </IconContext.Provider>
+              S'enregistrer avec Google
+            </div>
           </CardHeader>
           <CardBody>
             <InputForm

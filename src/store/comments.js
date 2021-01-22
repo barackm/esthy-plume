@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import * as actions from "./api";
-// import moment from "moment";
+import moment from "moment";
 const slice = createSlice({
   initialState: {
     list: [],
@@ -33,12 +33,14 @@ const {
   commentsReceived,
 } = slice.actions;
 export default slice.reducer;
-
+// export const loadComments = ()=>{
+//   console.log("load comment get called")
+// }
 export const loadComments = () => (dispatch, getState) => {
-  console.log("hello world");
-  // const { lastFetch } = getState().entities.comments;
-  // const difference = moment().diff(moment(lastFetch), "minutes");
-  // if (difference < 10) return;
+  console.log("load comment get called");
+  const { lastFetch } = getState().entities.comments;
+  const difference = moment().diff(moment(lastFetch), "minutes");
+  if (difference < 10) return;
 
   dispatch(
     actions.apiCallBegan({

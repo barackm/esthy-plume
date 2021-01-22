@@ -281,3 +281,97 @@
   margin-top: 15px;
   text-align: center;
 }
+.mission-row.strategy.valeurs.row .content {
+  text-align: center;
+}
+@media (max-width: 1100px) {
+  .about-page-main-container .about-header .hero-text h1 {
+    font-size: 70px;
+  }
+  .about-page-main-container .about-header .hero-text .about-feather-icon {
+    font-size: 70px;
+  }
+}
+@media (max-width: 768px) {
+  .about-page-main-container .about-header .hero-text h1 {
+    font-size: 50px;
+  }
+  .about-page-main-container .about-header .hero-text .about-feather-icon {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 970px) {
+}
+@media (max-width: 768px) {
+  .mission-row.specifiques {
+    display: grid;
+    grid-template-columns: repeat(1 1fr);
+    grid-template-areas:
+      "up"
+      "down";
+  }
+  .mission-row.specifiques .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .mission-row.specifiques .col-md-6:nth-child(2) {
+    grid-area: "up";
+  }
+  .mission-row.specifiques .col-md-6:nth-child(1) {
+    grid-area: "down";
+  }
+  .services-main-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    margin-top: 30px;
+  }
+  .our-mission-area .content {
+    margin-bottom: 200px;
+  }
+  .about-image-container {
+    margin-bottom: 40px;
+  }
+  .mission-row.strategy {
+    margin-bottom: 10px;
+  }
+  .mission-row.team .header {
+    text-align: center;
+  }
+  .team-main-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    margin-top: 30px;
+  }
+  .mission-row.strategy.valeurs {
+    height: 150px;
+  }
+}
+@media (max-width: 480px) {
+  .services-main-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 40px;
+    margin-top: 30px;
+  }
+  .about-page-main-container .about-header .hero-text h1 {
+    font-size: 30px;
+  }
+  .about-page-main-container .about-header .hero-text .about-feather-icon {
+    font-size: 30px;
+  }
+  .team-main-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 40px;
+    margin-top: 30px;
+  }
+}
