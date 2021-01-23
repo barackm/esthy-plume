@@ -4,19 +4,24 @@ import { IconContext } from "react-icons";
 import { FaSearch, FaUser } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { AiOutlineClose, AiOutlineDashboard } from "react-icons/ai";
-import { RiMenu3Line } from "react-icons/ri";
+import { AiOutlineDashboard } from "react-icons/ai";
 
 import mike from "../../assets/img/mike.jpg";
 
 class MainNavbar extends Component {
+  constructor(props) {
+    super(props);
+    this.hamburgerRef = React.createRef();
+    this.navbarRef = React.createRef();
+  }
   state = {
     profileOptionsOpen: false,
     searchQuery: "",
+    isNavbarOpen: false,
   };
   handleSearch = (e) => {
     this.setState({ searchQuery: e.target.value });
-    this.props.onCloseNavbar();
+    this.handleCloseNav();
   };
   handleToggleProfileOptions = () => {
     this.setState({ profileOptionsOpen: !this.state.profileOptionsOpen });
@@ -24,37 +29,36 @@ class MainNavbar extends Component {
   handleSubmit = () => {
     if (this.state.searchQuery.trim().value === 0) return;
     this.props.onSearch(this.state.searchQuery);
-    this.props.onCloseNavbar();
+    this.handleCloseNav();
   };
   handleCloseOptions = () => {
-    this.props.onCloseNavbar();
+    this.handleCloseNav();
     this.setState({ profileOptionsOpen: false });
+  };
+  handleOpenNavbar = () => {
+    this.hamburgerRef.current.classList.toggle("toggled");
+    this.navbarRef.current.classList.toggle("open");
+  };
+  handleCloseNav = () => {
+    this.hamburgerRef.current.classList.remove("toggled");
+    this.navbarRef.current.classList.remove("open");
   };
   render() {
     const { profileOptionsOpen } = this.state;
-    const {
-      searchValue,
-      onSearch,
-      onSubmitSearch,
-      isNavbarOpen,
-      onOpenNavbar,
-      onCloseNavbar,
-    } = this.props;
+    const { searchValue, onSearch, onSubmitSearch } = this.props;
 
     return (
-      <div
-        className={
-          isNavbarOpen ? "main-navbar-container open" : "main-navbar-container"
-        }
-      >
+      <div className="main-navbar-container" ref={this.navbarRef}>
         <div className="header-controls">
-          <Link to="/" className="logo-container">
+          <Link to="/" className="logo-container" onClick={this.handleCloseNav}>
             <img src={require("../../assets/img/logo-esthy.png")} alt="" />
           </Link>
-          <div className="hamberger-container" onClick={onOpenNavbar}>
-            <IconContext.Provider value={{ className: "hamberger" }}>
-              {isNavbarOpen ? <AiOutlineClose /> : <RiMenu3Line />}
-            </IconContext.Provider>
+          <div
+            className="hamberger-container"
+            ref={this.hamburgerRef}
+            onClick={this.handleOpenNavbar}
+          >
+            <div className="burger"></div>
           </div>
         </div>
 
@@ -62,17 +66,17 @@ class MainNavbar extends Component {
           <div className="links">
             <ul>
               <li>
-                <Link to="/" onClick={onCloseNavbar}>
+                <Link to="/" onClick={this.handleOpenNavbar}>
                   News
                 </Link>
               </li>
               <li>
-                <Link to="/about" onClick={onCloseNavbar}>
+                <Link to="/about" onClick={this.handleOpenNavbar}>
                   Apropos
                 </Link>
               </li>
               <li>
-                <Link to="/contact" onClick={onCloseNavbar}>
+                <Link to="/contact" onClick={this.handleOpenNavbar}>
                   Contact
                 </Link>
               </li>

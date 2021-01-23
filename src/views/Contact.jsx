@@ -11,16 +11,19 @@ class Contact extends Component {
   validationSchema = Yup.object().shape({
     name: Yup.string()
       .min(3, "Le Nom d'utilisateur doit avoir aumoins 3 characteres!")
-      .required("Veuillez entrer le Nom d'utilisateur!")
+      .required("Veuillez entrer votre Nom s'il vous plait")
       .label("Nom"),
     lastName: Yup.string()
       .min(3, "Le Post Nom doit avoir aumoins 3 characteres!")
-      .required()
+      .required("Veuillez entrer votre Postnom")
       .label("PostNom"),
     email: Yup.string().email("Email doit etre un adress email valide!"),
     message: Yup.string()
       .min(3, "Le message doit avoir aumoins 3 characteres")
       .required("Veuillez entrer votre message!"),
+    telephone: Yup.string()
+      .min(10, "Le numero de Telephone ne doit pas avoir moins de 10 chiffres")
+      .label("Numero de telephone"),
   });
 
   render() {
@@ -40,6 +43,7 @@ class Contact extends Component {
                 email: "",
                 address: "",
                 message: "",
+                telephone: "",
               }}
               validationSchema={this.validationSchema}
             >
@@ -75,6 +79,12 @@ class Contact extends Component {
                     type="text"
                     label="Address"
                     placeholder="Ex: Goma katindo RDC "
+                  />
+                  <InputField
+                    name="telephone"
+                    type="text"
+                    label="Numero de telephone"
+                    placeholder="Ex: (+243) 977 432 122"
                   />
                 </Col>
               </Row>

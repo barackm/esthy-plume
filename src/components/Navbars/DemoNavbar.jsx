@@ -73,6 +73,7 @@ class Header extends React.Component {
     });
     return brandName;
   }
+
   openSidebar() {
     document.documentElement.classList.toggle("nav-open");
     this.sidebarToggle.current.classList.toggle("toggled");

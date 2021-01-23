@@ -314,7 +314,7 @@
   height: 100%;
 }
 .post-main-container .article-images-wrapper .article-category {
-  position: absolute;
+  position: absolute !important;
   right: 18px;
   top: 18px;
   background-color: var(--secondary-color);
@@ -796,6 +796,7 @@
   cursor: pointer;
   text-transform: uppercase;
   font-size: 16px;
+  text-align: center;
 }
 .add-comment-area .right-side .comment-area textarea {
   border: none;
@@ -1129,7 +1130,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 /* search navbar styles  */
@@ -1503,6 +1504,7 @@ a {
   }
   .post-details-right-area.col-sm-12.col-lg-4 {
     margin: 0 !important;
+    padding: 0 !important;
   }
   .post-commands .older-post .old .last-post-title {
     font-size: 9px !important;
@@ -1514,6 +1516,17 @@ a {
 @media (max-width: 1100px) {
   .footer-main-container .main-container .footer-posts {
     width: 95% !important;
+  }
+  .main-right-side-area {
+    padding-left: 0;
+  }
+  .main-right-side-area.col-sm-12.col-lg-4 {
+    padding: 0 !important;
+  }
+  .search-navbar-main-container {
+    width: 93%;
+    margin-top: 20px;
+    margin-bottom: 0px;
   }
 }
 @media (max-width: 960px) {
@@ -1535,6 +1548,15 @@ a {
     grid-gap: 20px;
     padding: 20px 0;
     padding-top: 30px;
+  }
+  .search-navbar-main-container span:nth-child(1) {
+    font-size: 10px;
+  }
+  .search-navbar-main-container span:nth-child(1) strong {
+    font-size: 10px;
+  }
+  .search-navbar-main-container span:nth-child(2) {
+    font-size: 10px;
   }
 }
 
@@ -1561,5 +1583,18 @@ a {
   }
   .card-title {
     font-size: 16px;
+  }
+  .footer-links .footer-credentials {
+    color: rgba(255, 255, 255, 0.562);
+    font-size: 12px;
+  }
+}
+
+/* post details body styles   */
+
+/* messages details media queries   / */
+@media (max-width: 1100px) {
+  .message-wrapper {
+    width: 93%;
   }
 }

@@ -10,11 +10,14 @@ import img from "../../assets/img/9.jpg";
 
 class Post extends Component {
   state = {};
+  changeLocation = () => {
+    return this.props.history.push("/news/1");
+  };
   render() {
     return (
       <div className="post-main-container">
         <div className="left-area">
-          <div className="article-images-wrapper">
+          <div className="article-images-wrapper" onClick={this.changeLocation}>
             <div className="over-lay"></div>
             <span className="article-category">Culture</span>
             <div className="image">

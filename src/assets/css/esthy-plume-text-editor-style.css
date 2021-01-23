@@ -1,7 +1,7 @@
 .RichEditor-root {
   background: #fff;
   border: 1px solid #ddd;
-  font-family: "Georgia", serif;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   padding: 15px;
   border-radius: 4px;
@@ -90,19 +90,24 @@
   overflow: hidden;
   display: inline-block;
 }
-blockquote {
+
+.post-details-body-area {
+}
+.post-details-body-area blockquote {
   background: #e8474715;
   border-left: 3px solid var(--secondary-color) !important;
   margin: 1.5em 10px;
+  margin-left: 0;
   padding: 0.5em 10px;
-
+  line-height: 1.3;
   font-style: italic;
   color: #666;
   font-family: "Hoefler Text", "Georgia", serif;
   font-size: 18px;
   /* quotes: "\201C""\201D""\2018""\2019"; */
 }
-blockquote:before {
+
+.post-details-body-area blockquote:before {
   color: #ccc;
   /* content: open-quote; */
   font-size: 4em;
@@ -110,7 +115,7 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
-blockquote p {
+.post-details-body-area blockquote p {
   /* display: inline; */
 }
 .text-edito-block-item {
@@ -119,7 +124,47 @@ blockquote p {
   border-radius: 3px;
   /* padding: 4px; */
 }
-pre,
+.post-details-body-area pre,
 code {
   background-color: #6d69693d;
+}
+.post-details-body-area p em {
+  line-height: 1;
+}
+.post-details-body-area h1 {
+  font-size: 30px;
+  line-height: 1.1;
+}
+.post-details-body-area p {
+  font-size: 16px;
+}
+.post-details-body-area .article-details-main-images-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.post-details-body-area
+  .article-details-main-images-area
+  .article-detail-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .post-details-body-area
+    .article-details-main-images-area
+    .article-detail-images-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+  .post-details-body-area h1 {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+  .post-details-body-area p {
+    font-size: 14px;
+  }
 }

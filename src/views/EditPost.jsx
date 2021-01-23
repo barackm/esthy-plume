@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import TextEditor from "../components/text-editor/TextEditor";
 import { EditorState } from "draft-js";
-import { stateToHTML } from "draft-js-export-html";
-import ReactHtmlParser from "react-html-parser";
+// import { stateToHTML } from "draft-js-export-html";
 import { AiFillCamera } from "react-icons/ai";
 
 import {
@@ -54,8 +53,8 @@ class EditPost extends Component {
     const { editorState, images, errors } = this.state;
     var formData = new FormData();
     formData.append("image", images[0]);
-    const courrentContent = editorState.getCurrentContent();
-    const html = stateToHTML(courrentContent);
+    // const courrentContent = editorState.getCurrentContent();
+    // const html = stateToHTML(courrentContent);
     return (
       <div className="new-post-page-main-container">
         <Card className="card-user new-post-main-area">
@@ -161,7 +160,6 @@ class EditPost extends Component {
               <Row>
                 <SubmitBtn label="Publier" />
               </Row>
-              <Row className="editor-html">{ReactHtmlParser(html)}</Row>
             </InputForm>
           </CardBody>
         </Card>

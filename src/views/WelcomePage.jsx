@@ -43,7 +43,7 @@ class WelcomePage extends Component {
                   ))}
                 <div className="main-articles-container">
                   {articles.map((article) => (
-                    <Post key={article.id} />
+                    <Post key={article.id} {...this.props} />
                   ))}
                 </div>
                 <div className="load-morebtn-wrapper">

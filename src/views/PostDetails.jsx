@@ -107,14 +107,42 @@ class PostDetails extends Component {
                 </div>
 
                 <div className="post-details-body-area">
-                  <div className="first">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quas pariatur nulla laborum molestiae vero blanditiis
-                    repellat, illo placeat praesentium itaque eum? Quaerat error
-                    quia vel ipsa! Explicabo fugit id eius, voluptatem obcaecati
-                    sit, ullam,
-                  </div>
-                  <div className="second">
+                  <p>
+                    <strong>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quas pariatur nulla laborum molestiae vero blanditiis
+                      repellat, illo placeat praesentium itaque eum? Quaerat
+                      error quia vel ipsa! Explicabo fugit id eius, voluptatem
+                      obcaecati sit, ullam,
+                    </strong>
+                  </p>
+                  <blockquote>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Excepturi veniam commodi ea ipsam, quaerat repellat officia,
+                    vel deserunt provident hic, itaque quo mollitia eveniet.
+                    Laborum, placeat quo eveniet. Laborum, placeat quos?
+                    Provident, dolorum autem.
+                  </blockquote>
+                  <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You
+                    need to enable JavaScript to run this app.You need toenable
+                    JavaScript to run this app.You need to enable JavaScript to
+                    run this app.You need to enable JavaScript to run this
+                    app.You need toenable JavaScript to run this app.You need to
+                    enable JavaScript to ru.
+                  </p>
+                  <ul>
+                    <li>You need to enable JavaScript </li>
+                    <li>eed to enable JavaScript to run </li>
+                    <li>
+                      ble JavaScript to run this app.You need toenable
+                      JavaScript to run this app.You need to enable JavaScript
+                      to run this app.You need t.
+                    </li>
+                    <li>You need to enable JavaScript to run this app.</li>
+                    <li>You need run this app.</li>
+                  </ul>
+                  <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quas pariatur nulla laborum molestiae vero blanditiis
                     repellat, illo placeat praesentium itaque eum? Quaerat error
@@ -133,8 +161,42 @@ class PostDetails extends Component {
                     blanditiis repellat, illo placeat praesentium itaque eum?
                     Quaerat error quia vel ipsa! Explicabo fugit id eius,
                     voluptatem obcaecati sit, ullam,
-                  </div>
-                  <div className="second">
+                  </p>
+                  <p>
+                    <em>
+                      Excepturi veniam commodi ea ipsam, quaerat repelcommodi ea
+                      ipsam, quaerlat officia, Excepturi veniam commodi ea
+                      ipsam, quaerat repellat officiacommodi ea ipsam, quaerat
+                      repellat officiacommodi ea ipsam, quaerat repellat
+                      officia, Excommodi ea ipsam, quaerat repellat
+                      officiapellat officia,Excepturi veniam commodicommodi ea
+                      ipsam, quaerat repellat officia{" "}
+                    </em>
+                  </p>
+                  <h1>
+                    You need to enable JavaScript to run this app.You need to
+                    enable JavaScript to run this app.You need to enable
+                    JavaScript to run this app.
+                  </h1>
+                  <ol>
+                    <li>You need to enable JavaScript to run this app.</li>
+                    <li>You need to enable JavaScript to run this app.</li>
+                    <li>You need to enable JavaScript to run this app.</li>
+                    <li>You need to enable JavaScript to run this app.</li>
+                    <li>You need to enable JavaScript to run this app.</li>
+                  </ol>
+                  <p>
+                    <u>
+                      <em>
+                        You need to enable JavaScript to run this app.You need
+                        toenable JavaScript to run this app.You need to enable
+                        JavaScript to run this app.You need to enable JavaScript
+                        to run this app.You need toenable JavaScript to run this
+                        app.You need to enable JavaScript to run this app.
+                      </em>
+                    </u>
+                  </p>
+                  <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quas pariatur nulla laborum molestiae vero blanditiis
                     repellat, illo placeat praesentium itaque eum? Quaerat error
@@ -144,15 +206,27 @@ class PostDetails extends Component {
                     blanditiis repellat, illo placeat praesentium itaque eum?
                     Quaerat error quia vel ipsa! Explicabo fugit id eius,
                     voluptatem obcaecati sit, ullam, <br />
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quas pariatur nulla laborum molestiae vero blanditiis
-                    repellat, illo placeat praesentium itaque eum? Quaerat error
-                    quia vel ipsa! Explicabo fugit id eius, voluptatem obcaecati
-                    sit, ullam,Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quas pariatur nulla laborum molestiae vero
-                    blanditiis repellat, illo placeat praesentium itaque eum?
-                    Quaerat error quia vel ipsa! Explicabo fugit id eius,
-                    voluptatem obcaecati sit, ullam,
+                  </p>
+                  <h1>
+                    <strong>
+                      You need to enable JavaScript to run this app.You need
+                      toenable JavaScript to run this app.You need to enable
+                      JavaScript to run this app.
+                    </strong>
+                  </h1>
+
+                  <div className="article-details-main-images-area">
+                    <div className="article-detail-images-grid">
+                      <div className="image-wrapper">
+                        <img src={require("../assets/img/1.jpg")} alt="" />
+                      </div>
+                      <div className="image-wrapper">
+                        <img src={require("../assets/img/bg5.jpg")} alt="" />
+                      </div>
+                      <div className="image-wrapper">
+                        <img src={require("../assets/img/bg.jpg")} alt="" />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="category-details">
