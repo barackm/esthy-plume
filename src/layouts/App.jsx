@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import AdminLayout from "../layouts/Admin";
 import WelcomePage from "../views/WelcomePage";
@@ -75,6 +77,7 @@ class App extends Component {
     } = this.state;
     return (
       <div className="app-main-container">
+        <ToastContainer />
         <MainNavbar
           onOpenNavbar={this.handleOpenNavbar}
           onCloseNavbar={this.handleCloseNavbar}

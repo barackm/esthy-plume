@@ -6,19 +6,30 @@ import CarouselHome from "./CarouselHome";
 import Post from "../components/common/Post";
 import RightSidebar from "../components/Sidebar/RightSidebar";
 import SearchNavbar from "../components/Navbars/SearchNavbar";
+import { connect } from "react-redux";
+import { loadArticles } from "../store/articles";
+import { loadCategories } from "store/categories";
 
 class WelcomePage extends Component {
-  state = {};
+  state = {
+    articles: [],
+    categories: [],
+  };
+  componentDidMount() {
+    const { articles, loadArticles, categories, loadCategories } = this.props;
+    loadArticles();
+    loadCategories();
+    this.setState({ articles: articles || [], categories: categories || [] });
+  }
   render() {
     const {
-      articles,
       selectedCategory,
       onChangeCategory,
-      categories,
       onShowAllCategories,
       searchQuery,
       search,
     } = this.props;
+    const { articles, categories } = this.state;
     return (
       <div className="welcome-page-main-container">
         <Container className="welcome-area">
@@ -64,5 +75,16 @@ class WelcomePage extends Component {
     );
   }
 }
-
-export default WelcomePage;
+const mapStateToProps = (state) => {
+  return {
+    articles: state.entities.articles.list,
+    categories: state.entities.categories.list,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadArticles: () => dispatch(loadArticles()),
+    loadCategories: () => dispatch(loadCategories()),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(WelcomePage);

@@ -25,7 +25,11 @@ class MessagesTable extends Component {
       label: "Supprimer",
       content: (message) => {
         return (
-          <Button className="btn-round" color="danger">
+          <Button
+            className="btn-round"
+            color="danger"
+            onClick={() => this.props.onDeleteMessage(message)}
+          >
             Supprimer
           </Button>
         );

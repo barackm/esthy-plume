@@ -2,6 +2,7 @@ import React from "react";
 import ErrorMessage from "./ErrorMessage";
 import { FormGroup, Input } from "reactstrap";
 import { useFormikContext } from "formik";
+import { useEffect } from "react";
 
 export default function InputField({
   name,
@@ -10,8 +11,25 @@ export default function InputField({
   placeholder,
   className,
   rest,
+  fieldValue = "",
 }) {
-  const { handleChange, errors, setFieldTouched, touched } = useFormikContext();
+  const {
+    handleChange,
+    errors,
+    setFieldTouched,
+    touched,
+    setFieldValue,
+    values,
+  } = useFormikContext();
+  useEffect(() => {
+    setTimeout(() => {
+      if (fieldValue.trim().length > 0) {
+        setFieldValue(name, fieldValue, true);
+      } else {
+        setFieldValue(name, "", true);
+      }
+    });
+  }, []);
   return (
     <div>
       <FormGroup>
@@ -23,6 +41,7 @@ export default function InputField({
           type={type}
           placeholder={placeholder}
           className={className}
+          value={values[name]}
         />
       </FormGroup>
       <ErrorMessage message={errors[name]} visible={touched[name]} />

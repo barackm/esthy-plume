@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
@@ -8,6 +7,7 @@ import Header from "../components/Navbars/DemoNavbar";
 import paginate from "../components/pagination/paginate";
 import Pagination from "../components/pagination/Pagination";
 import MessagesTable from "../components/table/MessagesTable";
+import AppModal from "components/common/AppModal";
 
 const messages = [
   {
@@ -94,6 +94,8 @@ class Discussions extends Component {
     sortColumn: { path: "username", order: "asc" },
     messages: [],
     searchQuery: "",
+    confirmationModal: false,
+    message: "",
   };
   componentDidMount() {
     this.setState({ messages });
@@ -129,8 +131,22 @@ class Discussions extends Component {
   handleSearch = (e) => {
     this.setState({ searchQuery: e.target.value });
   };
+  handleShowModal = (message) => {
+    this.setState({ confirmationModal: true, message });
+  };
+  handleToggleModal = () => {
+    this.setState({ confirmationModal: !this.state.confirmationModal });
+  };
+  handleDeleteMessage = () => {
+    this.setState({ confirmationModal: false });
+  };
   render() {
-    const { pageCount, currentPage, sortColumn } = this.state;
+    const {
+      pageCount,
+      currentPage,
+      sortColumn,
+      confirmationModal,
+    } = this.state;
     const pagedData = this.getPagedData();
     const messsagesNumber = 30000;
     return (
@@ -150,6 +166,7 @@ class Discussions extends Component {
                     sortColumn={sortColumn}
                     messages={pagedData}
                     onSort={this.handleSort}
+                    onDeleteMessage={this.handleShowModal}
                   />
                 </CardBody>
               </Card>
@@ -164,6 +181,15 @@ class Discussions extends Component {
             </Col>
           </Row>
         </div>
+        <AppModal
+          onToggleModal={this.handleToggleModal}
+          modalOpen={confirmationModal}
+          title="Supression du message"
+          success="Suprimer"
+          fail="Non"
+          body="Etes vous sure de vouloir suprimer ce message ? "
+          onSuccess={this.handleDeleteMessage}
+        />
       </>
     );
   }

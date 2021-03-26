@@ -19,7 +19,6 @@ import App from "./layouts/App";
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 
-// const hist = createBrowserHistory();
 const store = configureStore();
 ReactDOM.render(
   <Provider store={store}>

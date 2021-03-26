@@ -4,6 +4,7 @@ import Users from "views/Users";
 import Admins from "views/Admins";
 import Discussions from "views/Discussions";
 import Articles from "views/Articles";
+import Categories from "views/Categories";
 
 var routes = [
   {
@@ -40,6 +41,13 @@ var routes = [
     name: "Articles",
     icon: "nc-icon nc-paper",
     component: Articles,
+    layout: "/admin",
+  },
+  {
+    path: "/categories",
+    name: "Categories",
+    icon: "nc-icon nc-paper",
+    component: Categories,
     layout: "/admin",
   },
   {

@@ -7,7 +7,7 @@ import Header from "../components/Navbars/DemoNavbar";
 import convertNumber from "../variables/convertNumber";
 import paginate from "../components/pagination/paginate";
 import Pagination from "../components/pagination/Pagination";
-
+import AppModal from "../components/common/AppModal";
 const users = [
   {
     id: 1,
@@ -67,6 +67,9 @@ class Users extends Component {
     sortColumn: { path: "username", order: "asc" },
     users: [],
     searchQuery: "",
+    confirmationModaAdminlOpen: false,
+    confirmationModaDeletelOpen: false,
+    user: "",
   };
   componentDidMount() {
     this.setState({ users });
@@ -101,8 +104,41 @@ class Users extends Component {
     console.log(e.target.value);
     this.setState({ searchQuery: e.target.value });
   };
+
+  handleShowDeleteModal = (user) => {
+    console.log(user);
+    this.setState({ user, confirmationModaDeletelOpen: true });
+  };
+  handleToggleDeleteModal = () => {
+    this.setState({
+      confirmationModaDeletelOpen: !this.state.confirmationModaDeletelOpen,
+    });
+  };
+  handleOpenAdminModal = (user) => {
+    console.log(user);
+    this.setState({ user, confirmationModaAdminlOpen: true });
+  };
+  handleToggleAdminModal = () => {
+    this.setState({
+      confirmationModaAdminlOpen: !this.state.confirmationModaAdminlOpen,
+    });
+  };
+
+  handleDeleteUser = () => {
+    this.setState({ confirmationModaDeletelOpen: false });
+  };
+  handleMakeAdmin = () => {
+    this.setState({ confirmationModaAdminlOpen: false });
+  };
   render() {
-    const { pageCount, currentPage, sortColumn } = this.state;
+    const {
+      pageCount,
+      currentPage,
+      sortColumn,
+      confirmationModaDeletelOpen,
+      confirmationModaAdminlOpen,
+      user,
+    } = this.state;
     const pagedData = this.getPagedData();
     const usersNumber = 30000;
     return (
@@ -122,6 +158,8 @@ class Users extends Component {
                     sortColumn={sortColumn}
                     users={pagedData}
                     onSort={this.handleSort}
+                    onDeleteUser={this.handleShowDeleteModal}
+                    onMakeAdmin={this.handleOpenAdminModal}
                   />
                 </CardBody>
               </Card>
@@ -136,6 +174,28 @@ class Users extends Component {
             </Col>
           </Row>
         </div>
+        <AppModal
+          onToggleModal={this.handleToggleAdminModal}
+          modalOpen={confirmationModaAdminlOpen}
+          title="Creation d'un administrateur"
+          success="Créer"
+          fail="Non"
+          body={
+            user.isAdmin
+              ? `Etes vous sure de vouloir retirer ${user.username} comme administrateur ? `
+              : `Etes vous sure de vouloir rendre ${user.username} administrateur ? `
+          }
+          onSuccess={this.handleMakeAdmin}
+        />
+        <AppModal
+          onToggleModal={this.handleToggleDeleteModal}
+          modalOpen={confirmationModaDeletelOpen}
+          title="Supression d'utilisateur"
+          success="Suprimer"
+          fail="Non"
+          body={`Etes vous sure de vouloir suprimer ${user.username} ? `}
+          onSuccess={this.handleDeleteUser}
+        />
       </>
     );
   }

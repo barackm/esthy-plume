@@ -7,6 +7,7 @@ import ArticlesTable from "../components/table/ArticlesTable";
 import Header from "../components/Navbars/DemoNavbar";
 import convertNumber from "../variables/convertNumber";
 import { Link } from "react-router-dom";
+import AppModal from "components/common/AppModal";
 
 const articles = [
   {
@@ -66,6 +67,8 @@ class Articles extends Component {
     sortColumn: { path: "title", order: "asc" },
     articles: [],
     searchQuery: "",
+    articleToDelete: null,
+    confirmationModalOpen: false,
   };
   componentDidMount() {
     this.setState({ articles });
@@ -97,8 +100,24 @@ class Articles extends Component {
     console.log(e.target.value);
     this.setState({ searchQuery: e.target.value });
   };
+  handleOpenConfimationModal = (article) => {
+    this.setState({ confirmationModalOpen: true, articleToDelete: article });
+  };
+  handleToggleConfimationModal = () => {
+    this.setState({ confirmationModalOpen: !this.state.confirmationModalOpen });
+  };
+  handleDeleteArticle = () => {
+    this.setState({ confirmationModalOpen: false });
+
+    // delete the category in the state
+  };
   render() {
-    const { pageCount, currentPage, sortColumn } = this.state;
+    const {
+      pageCount,
+      currentPage,
+      sortColumn,
+      confirmationModalOpen,
+    } = this.state;
     const pagedData = this.getPagedData();
     const articlesNumber = 60000;
     return (
@@ -127,6 +146,7 @@ class Articles extends Component {
                 </CardHeader>
                 <CardBody>
                   <ArticlesTable
+                    onDeleteArticle={this.handleOpenConfimationModal}
                     sortColumn={sortColumn}
                     articles={pagedData}
                     onSort={this.handleSort}
@@ -144,6 +164,15 @@ class Articles extends Component {
             </Col>
           </Row>
         </div>
+        <AppModal
+          onToggleModal={this.handleToggleConfirmationModal}
+          modalOpen={confirmationModalOpen}
+          title="Supression d'un article"
+          success="Suprimer"
+          fail="Non"
+          body="Etes vous sure de vouloir suprimer cet article ? "
+          onSuccess={this.handleDeleteArticle}
+        />
       </>
     );
   }

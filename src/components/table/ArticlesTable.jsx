@@ -38,7 +38,11 @@ class ArticlesTable extends Component {
       label: "Supprimer",
       content: (article) => {
         return (
-          <Button className="btn-round" color="danger">
+          <Button
+            className="btn-round"
+            color="danger"
+            onClick={() => this.props.onDeleteArticle(article)}
+          >
             Supprimer
           </Button>
         );

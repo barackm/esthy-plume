@@ -24,6 +24,7 @@ class UsersTable extends Component {
           <Button
             className="btn-round"
             color={user.isAdmin ? "danger" : "primary"}
+            onClick={() => this.props.onMakeAdmin(user)}
           >
             {user.isAdmin ? "Retirer Admin" : "Faire Admin"}
           </Button>
@@ -35,7 +36,11 @@ class UsersTable extends Component {
       label: "Supprimer",
       content: (user) => {
         return (
-          <Button className="btn-round" color="danger">
+          <Button
+            className="btn-round"
+            color="danger"
+            onClick={() => this.props.onDeleteUser(user)}
+          >
             Supprimer
           </Button>
         );

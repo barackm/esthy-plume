@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import { RiTimeLine } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
-import { TiArrowForward } from "react-icons/ti";
+import { HiPencilAlt } from "react-icons/hi";
 import { connect } from "react-redux";
 import * as Yup from "yup";
 
@@ -84,14 +84,13 @@ class PostDetails extends Component {
                           <RiTimeLine />
                         </IconContext.Provider>
                         <span>Mars 07,2020</span>
-                        <Link to="/">
+                        <Link to="/edit-article">
                           <IconContext.Provider
                             value={{
-                              className:
-                                "post-details-icon-chevron forward-arrow",
+                              className: "post-details-icon-edit",
                             }}
                           >
-                            <TiArrowForward />
+                            <HiPencilAlt />
                           </IconContext.Provider>
                         </Link>
                       </div>
@@ -337,7 +336,7 @@ class PostDetails extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     addComment: (comment) => dispatch(addComment(comment)),
-    loadComments: () => dispatch(loadComments()),
+    loadComments: () => dispatch(loadComments("hello")),
   };
 };
 export default connect(null, mapDispatchToProps)(PostDetails);
