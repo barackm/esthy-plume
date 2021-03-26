@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TextEditor from "../components/text-editor/textEditorNew";
 import { v4 as uuidv4 } from "uuid";
-import { EditorState, convertFromHTML } from "draft-js";
+import { EditorState } from "draft-js";
 import Axios from "axios";
 import { stateToHTML } from "draft-js-export-html";
 import { AiFillCamera } from "react-icons/ai";
@@ -24,8 +24,8 @@ import { FaTimes, FaCheck, FaUpload } from "react-icons/fa";
 import { connect } from "react-redux";
 import SelectInputField from "components/form/selectInputForm";
 import { toast } from "react-toastify";
-import truncatedStr from "utils/truncatedStr";
-import HtmlParser from "react-html-parser";
+// import truncatedStr from "utils/truncatedStr";
+// import HtmlParser from "react-html-parser";
 
 class EditPost extends Component {
   state = {
@@ -46,6 +46,7 @@ class EditPost extends Component {
   };
   validationSchema = Yup.object().shape({
     title: Yup.string().min(3).required(),
+    slug: Yup.string().min(3).required(),
     categoryId: Yup.string().required(
       "Veuillez choisir la cetegorie pour l'article."
     ),
@@ -166,7 +167,7 @@ class EditPost extends Component {
           <CardBody>
             <InputForm
               validationSchema={this.validationSchema}
-              initialValues={{ title: "", categoryId: "" }}
+              initialValues={{ title: "", categoryId: "", slug: "" }}
               onSubmit={this.handleSubmit}
             >
               <Row>
@@ -175,6 +176,16 @@ class EditPost extends Component {
                     name="title"
                     type="text"
                     label="Titre Principale de l'article"
+                  />
+                  <br />
+                </Col>
+              </Row>
+              <Row>
+                <Col className="pr-1 form-items" md="12">
+                  <InputField
+                    name="slug"
+                    type="text"
+                    label="Petit detail sur l'article"
                   />
                   <br />
                 </Col>
