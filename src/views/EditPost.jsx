@@ -86,7 +86,7 @@ class EditPost extends Component {
         "upload_preset",
         process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
       );
-      Axios.post(process.env.REACT_APP_CLOUDINARY_BASE_URL, formData)
+      return Axios.post(process.env.REACT_APP_CLOUDINARY_BASE_URL, formData)
         .then((res) => {
           unSentImages[index].isSent = true;
           unSentImages[index].url = res.data.secure_url;
@@ -113,6 +113,7 @@ class EditPost extends Component {
     });
     this.setState({ images, errors });
   };
+
   handleDeleteImage = (_image) => {
     const _images = [...this.state.images];
     const images = _images.filter((image) => image._id !== _image._id);
@@ -130,6 +131,7 @@ class EditPost extends Component {
     }
 
     if (images.length > 0) {
+      // eslint-disable-next-line
       images.map((image) => {
         if (!image.url) {
           return toast.warning(

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactQuill, { Quill, Mixin, Toolbar } from "react-quill";
+import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 class TextEditor extends Component {
@@ -7,10 +7,6 @@ class TextEditor extends Component {
     super(props);
     this.state = { editorHtml: "", theme: "snow" };
     this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(value) {
-    this.setState({ text: value });
   }
 
   handleChange(html) {

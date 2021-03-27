@@ -23,13 +23,15 @@ export default function InputField({
   } = useFormikContext();
   useEffect(() => {
     setTimeout(() => {
+      // eslint-disable-next-line
       if (fieldValue.trim().length > 0) {
         setFieldValue(name, fieldValue, true);
       } else {
+        // eslint-disable-next-line
         setFieldValue(name, "", true);
       }
     });
-  }, []);
+  });
   return (
     <div>
       <FormGroup>
